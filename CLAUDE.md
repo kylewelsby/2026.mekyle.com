@@ -102,6 +102,7 @@ When generating content for this site:
 - Vary list lengths naturally — avoid defaulting to groups of three
 - Avoid marketing-style triads and rhythmic parallel structures
 - State facts, not superlatives — let metrics speak
+- Use emojis throughout documentation and plans to add personality and visual scanning aids 🎯
 
 ## Performance Constraints
 
