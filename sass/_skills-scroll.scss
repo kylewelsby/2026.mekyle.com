@@ -1,0 +1,87 @@
+// Skills Scroll Background Animation
+// Animated text backdrop showing technical expertise
+
+.skills-scroll {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $z-skills-bg;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.08;
+
+    // Respect reduced motion preference
+    @media (prefers-reduced-motion: reduce) {
+        opacity: 0.05;
+
+        .skills-track {
+            animation: none;
+        }
+    }
+}
+
+.skills-row {
+    display: flex;
+    white-space: nowrap;
+    font-family: $font-stack;
+    font-size: $font-size-xl;
+    font-weight: 600;
+    color: $color-text-primary;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: $spacing-lg 0;
+
+    @media (min-width: $bp-md) {
+        font-size: $font-size-2xl;
+        padding: $spacing-xl 0;
+    }
+
+    @media (min-width: $bp-lg) {
+        font-size: $font-size-3xl;
+        padding: $spacing-2xl 0;
+    }
+}
+
+.skills-track {
+    display: inline-block;
+    animation: scroll-left 60s linear infinite;
+    will-change: transform;
+}
+
+// Different rows with varied speeds and directions
+.skills-row--1 {
+    margin-top: 5vh;
+
+    .skills-track {
+        animation-duration: 45s;
+    }
+}
+
+.skills-row--2 {
+    margin-top: 15vh;
+
+    .skills-track {
+        animation-direction: reverse;
+        animation-duration: 55s;
+    }
+}
+
+.skills-row--3 {
+    margin-top: 25vh;
+
+    .skills-track {
+        animation-duration: 50s;
+    }
+}
+
+// Animation keyframes
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}

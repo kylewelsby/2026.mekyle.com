@@ -1,0 +1,109 @@
+// Layout Components
+
+.container {
+    width: 100%;
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+}
+
+.container--narrow {
+    max-width: $container-narrow;
+}
+
+// Section styling
+section {
+    padding: $spacing-3xl 0;
+
+    @media (min-width: $bp-md) {
+        padding: $spacing-4xl 0;
+    }
+}
+
+.section-title {
+    margin-bottom: $spacing-xl;
+    text-align: center;
+
+    @media (min-width: $bp-md) {
+        margin-bottom: $spacing-2xl;
+    }
+}
+
+// Site footer
+.site-footer {
+    padding: $spacing-xl 0;
+    text-align: center;
+    color: $color-text-muted;
+    font-size: $font-size-sm;
+    border-top: 1px solid $color-bg-elevated;
+
+    a {
+        color: $color-text-muted;
+
+        &:hover,
+        &:focus {
+            color: $color-accent;
+        }
+    }
+}
+
+// Page template
+.page {
+    padding-top: $spacing-3xl;
+    padding-bottom: $spacing-3xl;
+}
+
+.page__header {
+    margin-bottom: $spacing-2xl;
+    text-align: center;
+}
+
+.page__title {
+    margin-bottom: $spacing-md;
+}
+
+.page__description {
+    font-size: $font-size-lg;
+    color: $color-text-secondary;
+}
+
+.page__content {
+    max-width: $container-narrow;
+    margin: 0 auto;
+}
+
+.page__nav {
+    margin-top: $spacing-3xl;
+    text-align: center;
+}
+
+.page__back {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+    color: $color-text-muted;
+    font-size: $font-size-sm;
+    transition: color $transition-fast;
+
+    &:hover,
+    &:focus {
+        color: $color-accent;
+    }
+}
+
+// Prose content
+.prose {
+    h2, h3, h4, h5, h6 {
+        margin-top: $spacing-2xl;
+        margin-bottom: $spacing-md;
+    }
+
+    p + p {
+        margin-top: $spacing-md;
+    }
+
+    a {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+}

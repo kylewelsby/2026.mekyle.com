@@ -1,0 +1,19 @@
+# Zola build output
+public/
+
+# macOS
+.DS_Store
+
+# Editor directories
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Node (if any tooling added later)
+node_modules/
+
+# Environment files
+.env
+.env.local

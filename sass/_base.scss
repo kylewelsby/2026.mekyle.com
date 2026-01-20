@@ -1,0 +1,168 @@
+// Base Element Styles
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-stack;
+    font-size: $font-size-base;
+    color: $color-text-secondary;
+    background-color: $color-bg;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+    color: $color-text-primary;
+    font-weight: 600;
+    line-height: $line-height-tight;
+}
+
+h1 {
+    font-size: $font-size-4xl;
+
+    @media (min-width: $bp-md) {
+        font-size: $font-size-5xl;
+    }
+}
+
+h2 {
+    font-size: $font-size-2xl;
+
+    @media (min-width: $bp-md) {
+        font-size: $font-size-3xl;
+    }
+}
+
+h3 {
+    font-size: $font-size-xl;
+
+    @media (min-width: $bp-md) {
+        font-size: $font-size-2xl;
+    }
+}
+
+h4 {
+    font-size: $font-size-lg;
+}
+
+h5, h6 {
+    font-size: $font-size-base;
+}
+
+p {
+    margin-bottom: $spacing-md;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Links
+a {
+    color: $color-link;
+    transition: color $transition-fast;
+
+    &:hover,
+    &:focus {
+        color: $color-link-hover;
+    }
+
+    &:focus-visible {
+        outline: 2px solid $color-accent;
+        outline-offset: 2px;
+    }
+}
+
+// Code
+code {
+    font-family: $font-stack-mono;
+    font-size: 0.9em;
+    background-color: $color-bg-elevated;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+}
+
+pre {
+    font-family: $font-stack-mono;
+    background-color: $color-bg-elevated;
+    padding: $spacing-md;
+    border-radius: 6px;
+    overflow-x: auto;
+
+    code {
+        background: none;
+        padding: 0;
+    }
+}
+
+// Lists (prose context)
+.prose ul,
+.prose ol {
+    margin-bottom: $spacing-md;
+    padding-left: $spacing-lg;
+}
+
+.prose ul {
+    list-style: disc;
+}
+
+.prose ol {
+    list-style: decimal;
+}
+
+.prose li {
+    margin-bottom: $spacing-sm;
+}
+
+// Blockquotes
+blockquote {
+    border-left: 3px solid $color-accent;
+    padding-left: $spacing-md;
+    margin: $spacing-lg 0;
+    color: $color-text-emphasis;
+    font-style: italic;
+}
+
+// Horizontal rule
+hr {
+    border: none;
+    border-top: 1px solid $color-bg-highlight;
+    margin: $spacing-2xl 0;
+}
+
+// Selection
+::selection {
+    background-color: $color-accent;
+    color: $color-bg;
+}
+
+// Accessibility utilities
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.skip-link {
+    position: fixed;
+    top: -100%;
+    left: $spacing-md;
+    z-index: $z-skip-link;
+    padding: $spacing-sm $spacing-md;
+    background-color: $color-accent;
+    color: $color-bg;
+    font-weight: 600;
+    border-radius: 0 0 6px 6px;
+    transition: top $transition-fast;
+
+    &:focus {
+        top: 0;
+    }
+}

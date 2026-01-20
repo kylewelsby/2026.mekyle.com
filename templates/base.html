@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
+    <meta name="author" content="{{ config.extra.author }}">
+    <meta name="keywords" content="{{ config.extra.keywords | join(sep=', ') }}">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{% block canonical %}{{ config.base_url }}{% endblock canonical %}">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{% block og_title %}{{ config.title }}{% endblock og_title %}">
+    <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock og_description %}">
+    <meta property="og:type" content="{% block og_type %}website{% endblock og_type %}">
+    <meta property="og:url" content="{% block og_url %}{{ config.base_url }}{% endblock og_url %}">
+    <meta property="og:image" content="{{ config.base_url }}/images/og-image.jpg">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="{{ config.extra.author }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@halfcube">
+    <meta name="twitter:creator" content="@halfcube">
+    <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }}{% endblock twitter_title %}">
+    <meta name="twitter:description" content="{% block twitter_description %}{{ config.description }}{% endblock twitter_description %}">
+    <meta name="twitter:image" content="{{ config.base_url }}/images/og-image.jpg">
+
+    <!-- Structured Data: Person -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "{{ config.extra.author }}",
+        "jobTitle": "Staff Software Engineer",
+        "url": "{{ config.base_url }}",
+        "email": "{{ config.extra.author_email }}",
+        "sameAs": [
+            "{{ config.extra.github }}",
+            "{{ config.extra.linkedin }}",
+            "{{ config.extra.twitter }}",
+            "{{ config.extra.stackoverflow }}"
+        ],
+        "knowsAbout": [
+            "AI Systems",
+            "Financial Platforms",
+            "Distributed Systems",
+            "Software Architecture",
+            "TypeScript",
+            "Ruby",
+            "PostgreSQL"
+        ]
+    }
+    </script>
+
+    <!-- Structured Data: ProfilePage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "mainEntity": {
+            "@type": "Person",
+            "name": "{{ config.extra.author }}"
+        },
+        "dateCreated": "2026-01-20",
+        "dateModified": "2026-01-20"
+    }
+    </script>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/style.css" as="style">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Plausible Analytics (privacy-respecting) -->
+    <script defer data-domain="{{ config.extra.plausible_domain }}" src="https://plausible.io/js/plausible.outbound-links.js"></script>
+
+    <!-- Console Greeting Easter Egg -->
+    <script>
+    console.log(
+        '%c Hey there, curious developer!',
+        'font-size: 16px; font-weight: bold; color: #88C0D0;'
+    );
+    console.log(
+        '%cFancy a chat? Find me at halfcubeuk@gmail.com or on LinkedIn.',
+        'font-size: 12px; color: #D8DEE9;'
+    );
+    console.log(
+        '%cP.S. This site scores 100/100 on Lighthouse. Yes, I checked.',
+        'font-size: 11px; color: #4C566A; font-style: italic;'
+    );
+    </script>
+
+    {% block head %}{% endblock head %}
+</head>
+<body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    {% block body %}{% endblock body %}
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; {{ now() | date(format="%Y") }} {{ config.extra.author }}. Built with <a href="https://www.getzola.org/" rel="noopener">Zola</a>.</p>
+        </div>
+    </footer>
+</body>
+</html>

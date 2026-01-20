@@ -1,0 +1,160 @@
+// Content Sections
+
+// Accomplishments
+.accomplishments {
+    background-color: $color-bg-elevated;
+}
+
+.accomplishments__list {
+    display: grid;
+    gap: $spacing-lg;
+    max-width: $container-narrow;
+    margin: 0 auto;
+
+    @media (min-width: $bp-md) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $spacing-xl;
+    }
+
+    @media (min-width: $bp-lg) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.accomplishment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: $spacing-lg;
+
+    @media (min-width: $bp-md) {
+        padding: $spacing-xl;
+    }
+}
+
+.accomplishment__metric {
+    display: block;
+    font-size: $font-size-3xl;
+    font-weight: 700;
+    color: $color-accent;
+    margin-bottom: $spacing-sm;
+
+    @media (min-width: $bp-md) {
+        font-size: $font-size-4xl;
+    }
+}
+
+.accomplishment__label {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    line-height: $line-height-base;
+
+    @media (min-width: $bp-md) {
+        font-size: $font-size-base;
+    }
+}
+
+// About section
+.about {
+    // Default section styling
+}
+
+.about__content {
+    max-width: $container-narrow;
+    margin: 0 auto;
+    font-size: $font-size-lg;
+    line-height: $line-height-loose;
+    text-align: center;
+
+    @media (min-width: $bp-md) {
+        font-size: $font-size-xl;
+    }
+}
+
+// Interests section
+.interests {
+    background-color: $color-bg-elevated;
+    text-align: center;
+
+    p {
+        max-width: $container-narrow;
+        margin: 0 auto $spacing-xl;
+        font-size: $font-size-lg;
+        line-height: $line-height-loose;
+    }
+}
+
+.interests__links {
+    display: flex;
+    gap: $spacing-lg;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.interests__link {
+    display: inline-block;
+    padding: $spacing-sm $spacing-lg;
+    background-color: $color-bg;
+    border-radius: 6px;
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    transition: background-color $transition-fast, color $transition-fast;
+
+    &:hover,
+    &:focus {
+        background-color: $color-accent;
+        color: $color-bg;
+    }
+}
+
+// Contact section
+.contact {
+    text-align: center;
+
+    > .container > p {
+        max-width: $container-narrow;
+        margin: 0 auto $spacing-xl;
+        font-size: $font-size-lg;
+    }
+}
+
+.contact__links {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media (min-width: $bp-md) {
+        gap: $spacing-lg;
+    }
+}
+
+.contact__link {
+    display: inline-block;
+    padding: $spacing-sm $spacing-xl;
+    border: 2px solid $color-bg-highlight;
+    border-radius: 6px;
+    font-weight: 500;
+    color: $color-text-secondary;
+    transition: border-color $transition-fast, background-color $transition-fast, color $transition-fast;
+
+    &:hover,
+    &:focus {
+        border-color: $color-accent;
+        color: $color-accent;
+    }
+
+    &--primary {
+        background-color: $color-accent;
+        border-color: $color-accent;
+        color: $color-bg;
+
+        &:hover,
+        &:focus {
+            background-color: $color-link-hover;
+            border-color: $color-link-hover;
+            color: $color-bg;
+        }
+    }
+}

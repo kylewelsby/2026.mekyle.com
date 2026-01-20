@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} | {{ config.extra.author }}{% endblock title %}
+{% block description %}{{ page.description | default(value=config.description) }}{% endblock description %}
+{% block canonical %}{{ page.permalink }}{% endblock canonical %}
+
+{% block og_title %}{{ page.title }}{% endblock og_title %}
+{% block og_description %}{{ page.description | default(value=config.description) }}{% endblock og_description %}
+{% block og_url %}{{ page.permalink }}{% endblock og_url %}
+{% block twitter_title %}{{ page.title }}{% endblock twitter_title %}
+{% block twitter_description %}{{ page.description | default(value=config.description) }}{% endblock twitter_description %}
+
+{% block body %}
+<main id="main-content" class="page">
+    <div class="container">
+        <article class="page__article">
+            <header class="page__header">
+                <h1 class="page__title">{{ page.title }}</h1>
+                {% if page.description %}
+                <p class="page__description">{{ page.description }}</p>
+                {% endif %}
+            </header>
+
+            <div class="page__content prose">
+                {{ page.content | safe }}
+            </div>
+        </article>
+
+        <nav class="page__nav" aria-label="Back to home">
+            <a href="/" class="page__back">&larr; Back to home</a>
+        </nav>
+    </div>
+</main>
+{% endblock body %}

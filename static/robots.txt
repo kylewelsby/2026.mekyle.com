@@ -1,0 +1,10 @@
+# robots.txt for mekyle.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mekyle.com/sitemap.xml
+
+# AI-readable content
+# See /llms.txt for AI-friendly information about Kyle Welsby

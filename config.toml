@@ -1,0 +1,49 @@
+# Kyle Welsby Portfolio 2026
+# https://www.getzola.org/documentation/getting-started/configuration/
+
+base_url = "https://mekyle.com"
+title = "Kyle Welsby | Staff Software Engineer"
+description = "Staff/Principal Software Engineer specialising in AI Systems and Financial Platforms"
+default_language = "en"
+
+# Compilation settings
+compile_sass = true
+minify_html = true
+build_search_index = false
+
+# Feed settings (disabled - no blog)
+generate_feeds = false
+
+# Markdown settings
+[markdown]
+highlight_code = true
+highlight_theme = "nord"
+smart_punctuation = true
+external_links_target_blank = true
+external_links_no_follow = true
+external_links_no_referrer = true
+
+# Slugify settings
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
+
+# Site-wide extra variables
+[extra]
+author = "Kyle Welsby"
+author_email = "halfcubeuk@gmail.com"
+keywords = ["Staff Software Engineer", "Principal Software Engineer", "AI Systems", "Financial Platforms", "Fintech", "Distributed Systems"]
+
+# Social links
+github = "https://github.com/kylewelsby"
+linkedin = "https://www.linkedin.com/in/mekyle/"
+twitter = "https://twitter.com/halfcube"
+soundcloud = "https://soundcloud.com/mekyle"
+stackoverflow = "https://stackoverflow.com/users/580513/kylewelsby"
+kofi = "https://ko-fi.com/A3403WZD"
+instagram = "https://www.instagram.com/halfcubedance/"
+mixcloud = "https://www.mixcloud.com/kylewelsby/"
+
+# Analytics
+plausible_domain = "mekyle.com"

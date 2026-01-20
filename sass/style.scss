@@ -1,0 +1,15 @@
+// Kyle Welsby Portfolio 2026
+// Main stylesheet - imports all partials
+
+// Foundation
+@import "variables";
+@import "reset";
+@import "base";
+
+// Layout
+@import "layout";
+
+// Components
+@import "skills-scroll";
+@import "hero";
+@import "sections";
