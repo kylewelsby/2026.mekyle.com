@@ -1,72 +1,83 @@
-## ✨ ADDED Requirements
+## 🔄 MODIFIED Requirements
 
 ### 🖼️ Requirement: Hero Layout
 
 The hero section SHALL display:
-1. 📸 Portrait image positioned to appear as if bursting through a horizontal divider
-2. 👤 Name heading (Kyle Welsby)
-3. 💼 Title (Staff / Principal Software Engineer)
-4. 📝 Positioning statement (1-2 sentences)
-5. 🔗 Call-to-action links (LinkedIn, GitHub, Email)
+1. 👤 Name heading (Kyle Welsby) - centred
+2. 💼 Title (Staff Software Engineer) - centred, accent colour
+3. 🌊 Dual oscillating waves at bottom (blue and coral)
+4. 🔗 Network connector lines background with sparking dots
+
+The hero SHALL NOT include:
+- Portrait image (removed)
+- Tagline text (removed)
+- Social links (moved to footer)
 
 #### 🖥️ Scenario: Hero renders on desktop
 - **WHEN** the homepage is viewed on desktop
-- **THEN** the portrait is centred with pop-out effect
-- **AND** the name and title are prominently displayed
-- **AND** social links are horizontally arranged
+- **THEN** the name and title are prominently displayed and centred
+- **AND** the waves animate smoothly at the bottom
+- **AND** the network background is subtly visible
 
 #### 📱 Scenario: Hero renders on mobile
 - **WHEN** the homepage is viewed on mobile
-- **THEN** the layout adapts for smaller screens
-- **AND** all content remains visible and readable
+- **THEN** the layout remains centred and readable
+- **AND** the wave height scales down appropriately
+- **AND** all content remains visible
 
-### ✨ Requirement: Portrait Pop-out Effect
+## ✨ ADDED Requirements
 
-The hero portrait SHALL create a visual effect of the image bursting through a horizontal divider line using layered z-index positioning:
-- Skills scroll background: z-index -1
-- Hero content area: z-index 1
-- Horizontal divider: z-index 5
-- Portrait image: z-index 10 (overlapping the divider)
+### 🌊 Requirement: Oscillating Waves
 
-#### ✅ Scenario: Pop-out effect displays correctly
+The hero SHALL include dual animated waves:
+- Blue wave: Nord10 (#5E81AC) at 50% opacity
+- Coral wave: Nord12 (#D08770) at 40% opacity
+- Waves positioned at bottom of hero section
+- Waves oscillate in opposite directions (creates flowing effect)
+- Animation duration: 10-13s ease-in-out infinite
+
+#### ✅ Scenario: Waves animate correctly
 - **WHEN** the hero section is rendered
-- **THEN** the portrait appears to break through the divider
-- **AND** the effect is achieved with CSS only (no JavaScript)
+- **THEN** the blue wave drifts left and right
+- **AND** the coral wave drifts in the opposite direction
+- **AND** the waves create a flowing, oscillating effect
 
-#### ⚠️ Scenario: Effect degrades gracefully
-- **WHEN** CSS features are unsupported
-- **THEN** the portrait still displays
-- **AND** the layout remains functional
+#### ♿ Scenario: Reduced motion support
+- **WHEN** user has prefers-reduced-motion enabled
+- **THEN** wave animations are disabled
+- **AND** waves display in static position
 
-### ⚡ Requirement: Hero Image Optimisation
+### 🔗 Requirement: Network Connector Background
 
-The hero portrait SHALL be optimised for performance:
-- Primary format: AVIF
-- Fallback formats: WebP, JPG
-- Responsive sizes: 400w, 800w, 1200w
-- `fetchpriority="high"` attribute
-- Explicit width and height attributes
-- Alt text: "Kyle Welsby"
+The hero SHALL include a network pattern background:
+- SVG pattern with dots and connector lines
+- Frost blue colour (#88C0D0) at ~12% overall opacity
+- Pattern repeats across full viewport
+- 12 spark dots with staggered pulse animations
+- Spark animation: scale up and glow effect
 
-#### ✅ Scenario: Image loads efficiently
+#### ✅ Scenario: Network pattern displays
 - **WHEN** the page loads
-- **THEN** the browser selects the appropriate image format
-- **AND** the image is prioritised for loading (LCP)
-- **AND** no layout shift occurs (CLS = 0)
+- **THEN** the network pattern is visible behind all content
+- **AND** the pattern tiles seamlessly
+- **AND** spark dots pulse at random intervals
 
-### 🔗 Requirement: Social Links
+#### ⚡ Scenario: Performance is maintained
+- **WHEN** animations are running
+- **THEN** no layout shift occurs (CLS = 0)
+- **AND** animations run on GPU (transform/opacity only)
+- **AND** Lighthouse score remains 100/100
 
-The hero SHALL include social links with:
-- Inline SVG icons (no external icon fonts)
-- Accessible labels (visible text or aria-label)
-- Links: LinkedIn, GitHub, Email (mailto:)
-- Hover state using frost blue accent
+## ❌ REMOVED Requirements
 
-#### ♿ Scenario: Links are accessible
-- **WHEN** a screen reader encounters the links
-- **THEN** each link has an accessible name
-- **AND** the purpose is clear
+### 🖼️ Requirement: Portrait Pop-out Effect
+**Removed** - Portrait image and horizontal divider effect removed from hero.
 
-#### ✨ Scenario: Links have hover feedback
-- **WHEN** a link is hovered
-- **THEN** visual feedback is provided using `--nord8` accent colour
+### 📷 Requirement: Hero Image Optimisation
+**Removed** - No hero image in new design.
+
+### 🔗 Requirement: Hero Social Links
+**Removed** - Social links moved to site footer.
+
+### 📜 Requirement: Skills Scroll Background
+**Removed** - Replaced by network connector background.

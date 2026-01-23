@@ -1,158 +1,49 @@
 // Hero Section
-// Portrait pop-out effect inspired by "That's All Folks" style
+// Simplified design with name, title, and animated waves
 
 .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: $spacing-3xl $container-padding;
-    overflow: hidden;
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-4xl $container-padding;
+  padding-bottom: calc($spacing-4xl + 100px); // Extra space for waves
+  overflow: hidden;
+  text-align: center;
 
-    @media (min-width: $bp-lg) {
-        flex-direction: row;
-        justify-content: space-between;
-        max-width: $container-max;
-        margin: 0 auto;
-        gap: $spacing-3xl;
-    }
+  @media (min-width: $bp-md) {
+    min-height: 60vh;
+    padding-bottom: calc($spacing-4xl + 120px);
+  }
 }
 
 .hero__content {
-    position: relative;
-    z-index: $z-content;
-    text-align: center;
-    max-width: 36rem;
-
-    @media (min-width: $bp-lg) {
-        text-align: left;
-        flex: 1;
-    }
+  position: relative;
+  z-index: $z-content;
+  max-width: 48rem;
 }
 
 .hero__title {
-    font-size: $font-size-4xl;
-    margin-bottom: $spacing-sm;
+  font-size: $font-size-4xl;
+  margin-bottom: $spacing-sm;
 
-    @media (min-width: $bp-md) {
-        font-size: $font-size-5xl;
-    }
+  @media (min-width: $bp-md) {
+    font-size: $font-size-5xl;
+  }
+
+  @media (min-width: $bp-lg) {
+    font-size: 4rem;
+  }
 }
 
 .hero__subtitle {
-    font-size: $font-size-xl;
-    color: $color-accent;
-    font-weight: 500;
-    margin-bottom: $spacing-lg;
+  font-size: $font-size-xl;
+  color: $color-accent;
+  font-weight: 500;
 
-    @media (min-width: $bp-md) {
-        font-size: $font-size-2xl;
-    }
-}
-
-.hero__tagline {
-    font-size: $font-size-lg;
-    color: $color-text-secondary;
-    line-height: $line-height-loose;
-    margin-bottom: $spacing-xl;
-
-    @media (min-width: $bp-md) {
-        font-size: $font-size-xl;
-    }
-}
-
-.hero__links {
-    display: flex;
-    gap: $spacing-lg;
-    justify-content: center;
-
-    @media (min-width: $bp-lg) {
-        justify-content: flex-start;
-    }
-}
-
-.hero__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: $color-bg-elevated;
-    color: $color-text-secondary;
-    transition: background-color $transition-fast, color $transition-fast, transform $transition-fast;
-
-    &:hover,
-    &:focus {
-        background-color: $color-accent;
-        color: $color-bg;
-        transform: translateY(-2px);
-    }
-
-    &:focus-visible {
-        outline: 2px solid $color-accent;
-        outline-offset: 4px;
-    }
-
-    .icon {
-        width: 24px;
-        height: 24px;
-    }
-}
-
-// Portrait with pop-out effect
-.hero__portrait {
-    position: relative;
-    z-index: $z-portrait;
-    margin-top: $spacing-3xl;
-
-    @media (min-width: $bp-lg) {
-        margin-top: 0;
-        flex-shrink: 0;
-    }
-
-    // Horizontal divider that image breaks through
-    &::before {
-        content: '';
-        position: absolute;
-        left: -50vw;
-        right: -50vw;
-        top: 50%;
-        height: 4px;
-        background: linear-gradient(
-            90deg,
-            transparent,
-            $color-accent 20%,
-            $color-accent 80%,
-            transparent
-        );
-        z-index: $z-divider;
-        transform: translateY(-50%);
-    }
-}
-
-.hero__image {
-    position: relative;
-    z-index: $z-portrait;
-    width: 280px;
-    height: 350px;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 12px;
-    box-shadow:
-        0 4px 6px -1px rgba(0, 0, 0, 0.3),
-        0 10px 15px -3px rgba(0, 0, 0, 0.2),
-        0 20px 25px -5px rgba(0, 0, 0, 0.15);
-
-    @media (min-width: $bp-md) {
-        width: 350px;
-        height: 440px;
-    }
-
-    @media (min-width: $bp-lg) {
-        width: 400px;
-        height: 500px;
-    }
+  @media (min-width: $bp-md) {
+    font-size: $font-size-2xl;
+  }
 }

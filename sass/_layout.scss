@@ -47,6 +47,42 @@ section {
     }
 }
 
+.footer__links {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-md;
+}
+
+.footer__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $color-bg-elevated;
+    color: $color-text-muted;
+    transition: background-color $transition-fast, color $transition-fast, transform $transition-fast;
+
+    &:hover,
+    &:focus {
+        background-color: $color-accent;
+        color: $color-bg;
+        transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+        outline: 2px solid $color-accent;
+        outline-offset: 4px;
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
 // Page template
 .page {
     padding-top: $spacing-3xl;

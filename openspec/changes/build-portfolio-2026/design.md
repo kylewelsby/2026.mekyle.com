@@ -59,40 +59,55 @@ Kyle Welsby is rebuilding his portfolio website to position himself for Staff/Pr
 - Headings (#ECEFF4) on background (#2E3440): 12.5:1 (WCAG AAA) ✅
 - Links (#88C0D0) on background (#2E3440): 7.2:1 (WCAG AAA) ✅
 
-### 3. Hero Pop-out Effect: Layered Z-index 🖼️
+### 3. Hero Design: Waves + Network Background 🌊
 
-**Decision**: Use layered z-index approach with positioned elements
+**Decision**: Simplified hero with animated waves and network connector background
 
-**Rationale**:
-- More browser-compatible than clip-path
-- Easier to control with CSS
-- Works without JavaScript
-- Simpler responsive adaptation
+**Rationale** (Design Pivot - January 2026):
+- Cleaner, more modern aesthetic
+- Better focus on name and title
+- Animated waves create visual interest without distraction
+- Network pattern reinforces "technical architect" positioning
 
 **Implementation**:
 ```
 z-index layers:
-  1. Skills scroll background (z-index: -1)
+  1. Network background (z-index: -2) - fixed position
   2. Hero content area (z-index: 1)
-  3. Horizontal divider (z-index: 5)
-  4. Portrait image (z-index: 10, positioned to overlap divider)
+  3. Oscillating waves (z-index: 2) - positioned at hero bottom
 ```
 
-### 4. Skills Animation: CSS-only Scroll 📜
+**Waves**:
+- Blue wave: Nord10 (#5E81AC) at 50% opacity, 10s animation
+- Coral wave: Nord12 (#D08770) at 40% opacity, 13s reverse animation
+- SVG paths with CSS transform animations
+- `will-change: transform` for GPU acceleration
 
-**Decision**: Pure CSS keyframe animation with duplicated content
+**Network Background**:
+- SVG pattern (200x200) with dots and connector lines
+- Frost blue colour at 12% overall opacity
+- 12 spark dots with staggered pulse animations (4-6s duration)
+
+**Removed from previous design**:
+- Portrait image and pop-out effect
+- Skills scroll background
+- Social links in hero (moved to footer)
+
+### 4. Background: Network Connector Pattern 🔗
+
+**Decision**: CSS-only network pattern with animated sparks
 
 **Rationale**:
-- No JavaScript required
-- GPU-accelerated transforms
+- Replaces skills scroll with more subtle, technical aesthetic
+- SVG data URI means zero network requests
+- Spark animations are pure CSS (scale + box-shadow)
 - Respects prefers-reduced-motion
-- Low performance overhead
 
 **Implementation**:
-- Duplicate skill text to create seamless loop
-- `translateX(-50%)` animation for continuous scroll
-- Multiple rows at different speeds/directions for depth
-- 0.12 opacity to avoid competing with content
+- Inline SVG pattern as CSS background-image data URI
+- 12 positioned spark elements with staggered CSS animations
+- Fixed positioning covers full viewport
+- Overall opacity ~12% to avoid competing with content
 
 ### 5. Hosting: Cloudflare Pages ☁️
 

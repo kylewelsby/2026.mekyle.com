@@ -25,22 +25,22 @@
 - [x] **3.5** Create focus states for accessibility
 - [ ] **3.6** Test colour contrast ratios (WCAG AA minimum)
 
-## 📜 Phase 4: Scrolling Skills Background
+## 🔗 Phase 4: Network Connector Background (Design Pivot)
 
-- [x] **4.1** Create skills list data (TOML or inline)
-- [x] **4.2** Implement CSS keyframe animation for horizontal scroll
-- [x] **4.3** Create multiple rows with varied speeds/directions
-- [x] **4.4** Add subtle opacity for depth effect (0.1-0.15)
+- [x] **4.1** Create `_network-bg.scss` with SVG pattern
+- [x] **4.2** Implement connector lines and dots in SVG data URI
+- [x] **4.3** Add 12 spark elements with CSS pulse animations
+- [x] **4.4** Set overall opacity ~12% for subtle effect
 - [x] **4.5** Ensure animation respects `prefers-reduced-motion`
 - [ ] **4.6** Test performance impact (should not affect LCP)
 
-## 🖼️ Phase 5: Hero Section
+## 🌊 Phase 5: Hero Section (Design Pivot)
 
-- [ ] **5.1** Prepare hero portrait image (WebP, AVIF, responsive srcset)
-- [x] **5.2** Implement pop-out CSS effect (clip-path or layered z-index)
-- [x] **5.3** Add positioning statement text
-- [x] **5.4** Style call-to-action links (LinkedIn, GitHub, Email)
-- [ ] **5.5** Test on mobile (may need simplified version)
+- [x] **5.1** Simplify hero to name + title only (remove portrait, tagline, social links)
+- [x] **5.2** Create `_waves.scss` with oscillating wave animations
+- [x] **5.3** Add inline SVG waves (blue + coral)
+- [x] **5.4** Move social links to site footer
+- [ ] **5.5** Test waves on mobile (responsive height)
 
 ## 📝 Phase 6: Content Sections
 

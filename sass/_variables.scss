@@ -81,9 +81,15 @@ $transition-fast: 150ms ease;
 $transition-base: 250ms ease;
 $transition-slow: 350ms ease;
 
+// Wave colours (deeper than frost for visual impact)
+$color-wave-blue: $nord10;   // #5E81AC - deeper blue
+$color-wave-red: $nord12;    // #D08770 - coral/aurora
+
 // Z-index layers
-$z-skills-bg: -1;
+$z-network-bg: -2;
+$z-skills-bg: -1;  // Kept for reference, not currently used
 $z-content: 1;
-$z-divider: 5;
-$z-portrait: 10;
+$z-waves: 2;
+$z-divider: 5;     // Kept for reference, not currently used
+$z-portrait: 10;   // Kept for reference, not currently used
 $z-skip-link: 100;
