@@ -21,10 +21,12 @@ The homepage SHALL display 4-6 accomplishments with:
 - Action verbs describing the contribution
 
 Example accomplishments:
-- 🤖 Greenfield AI re-architecture (8 weeks, team of 10)
-- 💬 Communication platform from scratch
-- 🔒 State-driven system reducing regulatory risk
-- ⚡ Checkout performance at Shopify (~2% improvement)
+- 📅 15+ years building regulated platforms
+- 🚀 8-week greenfield platform to production
+- 🌍 7 European markets deployed
+- 🤖 Millions of debt cases and AI interactions handled
+- 🔒 State-driven financially auditable systems
+- ⚡ ~2% checkout performance improvement at Shopify scale
 
 #### ✅ Scenario: Accomplishments demonstrate impact
 - **WHEN** accomplishments are displayed

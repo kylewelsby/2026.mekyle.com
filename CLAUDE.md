@@ -29,6 +29,7 @@ The site replaces the 2021 Gridsome version with a modern Zola-based static site
 
 - **Static Site Generator**: Zola (Rust-based, single binary)
 - **Styling**: Sass/SCSS with Nord colour palette
+- **Icons**: [Lucide](https://lucide.dev/) — copy SVG inline, no external dependencies
 - **Hosting**: Cloudflare Pages (recommended) or Netlify
 - **Performance target**: 100/100 Lighthouse score on all categories
 
@@ -57,6 +58,10 @@ The site replaces the 2021 Gridsome version with a modern Zola-based static site
 ### Required Files
 - `/llms.txt` — AI-readable professional summary (see llms.txt spec)
 - Structured data (JSON-LD) for Person and ProfilePage schemas
+
+### ⚠️ Content Sync Rule
+
+When updating any professional content (accomplishments, skills, experience, positioning), **always update `static/llms.txt` to match**. This file is the AI-readable version of the site and must stay in sync with visible content.
 
 ## Professional Positioning
 

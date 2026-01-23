@@ -4,30 +4,39 @@
 
 ## Professional Summary
 
-Kyle Welsby is a Staff/Principal-level Software Engineer (IC track) specialising in AI Systems and regulated financial platforms. Based in Manchester, UK.
+Kyle Welsby is a Staff/Principal-level Software Engineer (IC track) with 15+ years building scalable, secure platforms for fintech and regulated systems. Based in Manchester, UK.
+
+## Key Accomplishments
+
+- **8 weeks**: Delivered complete greenfield platform architecture with cross-functional team of 10
+- **7 European markets**: Platform deployed across multiple regions
+- **Millions**: Debt cases and AI-mediated customer interactions handled
+- **~2% checkout improvement**: Performance gains at Shopify scale (millions of merchants)
+- **State-driven systems**: Financially auditable ledgers reducing regulatory risk
 
 ## Current Role
 
-Senior Software Engineer at Ophelos (acquired by Intrum), acting in a Principal capacity. Leading greenfield architecture for debt resolution platforms with strict regulatory requirements.
+Senior Software Engineer at Ophelos (acquired by Intrum), acting as technical architect and architectural authority. Leading greenfield AI-first debt resolution platform with cross-functional technical leadership across engineering, data, UX and executive stakeholders including CTO-level validation.
 
 ## Previous Experience
 
-- **Shopify** — Senior Software Engineer, working on merchant-facing systems at scale
-- **UK Public Sector & Fintech contracts** — Delivered regulated platforms across government and financial services
+- **Shopify** — Senior Software Engineer, technical lead for checkout and merchant admin systems at scale
+- **UK Public Sector & Fintech contracts** — Department for Education, FreeAgent (Open Banking), Co-op, and enterprise platforms
 
 ## Technical Expertise
 
 ### Primary
 
-- **Languages**: TypeScript, Ruby, SQL (PostgreSQL)
+- **Languages**: Go, Python, Ruby, Rust, TypeScript, SQL (PostgreSQL)
+- **Infrastructure**: Docker, Kubernetes, Terraform, GitHub Actions, AWS, GCP
 - **Domains**: AI-assisted development, agentic systems, distributed systems, fintech architecture
-- **Patterns**: Event sourcing, CQRS, state machines, Row Level Security, financially auditable ledgers
+- **Patterns**: State machines, Row Level Security, financially auditable ledgers, microservices, gRPC
 
 ### Secondary
 
-- React, Node.js, GraphQL, REST APIs
-- AWS, Kubernetes, Terraform, Docker
-- Kafka, Redis, RabbitMQ
+- React, GraphQL, REST APIs
+- Real-time systems, Server-Sent Events
+- CI/CD pipelines, Infrastructure as Code
 
 ## Engineering Philosophy
 
