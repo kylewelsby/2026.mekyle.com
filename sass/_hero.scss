@@ -47,3 +47,64 @@
     font-size: $font-size-2xl;
   }
 }
+
+// Location and relocation info
+.hero__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-top: $spacing-lg;
+}
+
+.hero__location {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+
+  .icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+}
+
+.hero__relocating {
+  font-size: $font-size-sm;
+  color: $color-accent-alt;
+  font-style: italic;
+}
+
+// Hero social links
+.hero__social {
+  display: flex;
+  gap: $spacing-md;
+  margin-top: $spacing-lg;
+  justify-content: center;
+}
+
+.hero__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba($color-bg-elevated, 0.6);
+  color: $color-text-secondary;
+  transition: background-color $transition-fast, color $transition-fast, transform $transition-fast;
+
+  &:hover,
+  &:focus {
+    background-color: $color-accent;
+    color: $color-bg;
+    transform: translateY(-2px);
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+}
