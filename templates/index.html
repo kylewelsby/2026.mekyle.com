@@ -62,9 +62,9 @@
                     <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
                 </defs>
                 <g class="waves__parallax">
-                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(94,129,172,0.7)"/>
-                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(208,135,112,0.5)"/>
-                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(94,129,172,0.3)"/>
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(5,69,122,0.7)"/>
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(145,204,245,0.5)"/>
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(5,69,122,0.3)"/>
                     <use xlink:href="#gentle-wave" x="48" y="7" fill="#3B4252"/>
                 </g>
             </svg>
@@ -75,6 +75,17 @@
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">About</h2>
+
+            <img
+                src="/images/profile.webp"
+                srcset="/images/profile.webp 200w, /images/profile@2x.webp 400w"
+                sizes="(min-width: 768px) 200px, 150px"
+                alt="Kyle Welsby - profile photo"
+                class="about__photo"
+                width="200"
+                height="200"
+                loading="lazy"
+            />
 
             <div class="about__content">
                 {{ section.content | safe }}
