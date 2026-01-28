@@ -51,7 +51,7 @@
 // Location info
 .hero__meta {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
   gap: $spacing-sm;
