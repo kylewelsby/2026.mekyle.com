@@ -11,7 +11,7 @@ The site SHALL include the following meta tags:
 
 #### ✅ Scenario: Title is optimised
 - **WHEN** the page is indexed
-- **THEN** the title is "Kyle Welsby | Staff Software Engineer | AI & Fintech Systems"
+- **THEN** the title is "Kyle Welsby | Senior Software Engineer"
 - **AND** it is under 60 characters
 
 #### ✅ Scenario: Description is optimised

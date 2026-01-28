@@ -48,6 +48,16 @@
   }
 }
 
+// Positioning statement
+.hero__tagline {
+  max-width: 36rem;
+  margin: $spacing-lg auto 0;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $color-text-secondary;
+  font-style: italic;
+}
+
 // Location info
 .hero__meta {
   display: flex;

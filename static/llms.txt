@@ -99,7 +99,7 @@ Aligning humans and AI-assisted coding around shared intent. Document-first, cod
 
 ## What Kyle Is Looking For
 
-Staff/Principal IC roles in:
+Senior and Staff IC roles in:
 - AI Systems engineering
 - Financial platforms and fintech
 - Regulated environments requiring high-judgment architectural decisions

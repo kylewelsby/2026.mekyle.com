@@ -4,13 +4,13 @@
 
 The hero section SHALL display:
 1. 👤 Name heading (Kyle Welsby) - centred
-2. 💼 Title (Staff Software Engineer) - centred, accent colour
-3. 🌊 Dual oscillating waves at bottom (blue and coral)
-4. 🔗 Network connector lines background with sparking dots
+2. 💼 Title (Senior Software Engineer · Technical Architect) - centred, accent colour
+3. 💬 Tagline/positioning statement - italic, secondary text, max-width 36rem
+4. 🌊 Dual oscillating waves at bottom (blue and coral)
+5. 🔗 Network connector lines background with sparking dots
 
 The hero SHALL NOT include:
 - Portrait image (removed)
-- Tagline text (removed)
 - Social links (moved to footer)
 
 #### 🖥️ Scenario: Hero renders on desktop

@@ -4,7 +4,7 @@
 
 The homepage SHALL display a positioning statement that:
 - Is 1-2 sentences maximum
-- Identifies role level (Staff/Principal Software Engineer)
+- Identifies role level (Senior Software Engineer, operating at Staff level)
 - Identifies specialisation (AI Systems, Financial Platforms)
 - Mentions distinctive approach (technical architect, high-judgment trade-offs)
 
