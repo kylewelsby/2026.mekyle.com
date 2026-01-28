@@ -51,24 +51,31 @@
 // Location info
 .hero__meta {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: $spacing-sm;
   margin-top: $spacing-lg;
 }
 
-.hero__location {
+.hero__location,
+.hero__relocation {
   display: inline-flex;
   align-items: center;
   gap: $spacing-xs;
   font-size: $font-size-sm;
   color: $color-text-muted;
+}
 
-  .icon {
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
-  }
+.hero__flag {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.hero__separator {
+  color: $color-text-muted;
+  opacity: 0.5;
 }
 
 // Hero social links

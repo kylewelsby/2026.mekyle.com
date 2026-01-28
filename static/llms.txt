@@ -8,7 +8,7 @@ I approach every system like I own the company. That conviction, combined with 1
 
 ## Professional Summary
 
-Kyle Welsby is a Senior Software Engineer operating at Staff level: setting technical direction, aligning cross-functional stakeholders, and making the high-judgment trade-offs that shape platforms. Based in Manchester, UK.
+Kyle Welsby is a Senior Software Engineer operating at Staff level: setting technical direction, aligning cross-functional stakeholders, and making the high-judgment trade-offs that shape platforms. Based in Manchester, UK. Open to relocation.
 
 His work spans fintech, regulated systems and AI-first platforms. He specialises in finding structural problems early: mapping hidden state complexity, advocating for architecture decisions that compound, and creating the clarity that lets teams move fast.
 

@@ -9,6 +9,7 @@ tagline = "I approach every system like I own the company. That conviction, comb
 name = "Kyle Welsby"
 title = "Senior Software Engineer · Technical Architect"
 location = "Manchester, UK"
+relocation = "Open to relocation"
 
 [[extra.hero.social]]
 name = "GitHub"
