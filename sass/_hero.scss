@@ -48,7 +48,7 @@
   }
 }
 
-// Location and relocation info
+// Location info
 .hero__meta {
   display: flex;
   flex-direction: column;
@@ -69,12 +69,6 @@
     height: 16px;
     flex-shrink: 0;
   }
-}
-
-.hero__relocating {
-  font-size: $font-size-sm;
-  color: $color-accent-alt;
-  font-style: italic;
 }
 
 // Hero social links
