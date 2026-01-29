@@ -98,8 +98,8 @@
     <!-- Styles -->
     <link rel="stylesheet" href="/style.css?v={{ now() | date(format='%s') }}">
 
-    <!-- Plausible Analytics (privacy-respecting) -->
-    <script defer data-domain="{{ config.extra.plausible_domain }}" src="https://plausible.io/js/plausible.outbound-links.js"></script>
+    <!-- Plausible Analytics (privacy-respecting, self-hosted script) -->
+    <script defer data-domain="{{ config.extra.plausible_domain }}" data-api="https://plausible.io/api/event" src="/js/plausible.js"></script>
 
     <!-- Console Greeting Easter Egg -->
     <script>
