@@ -11,7 +11,6 @@
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-origin
-  Cross-Origin-Embedder-Policy: require-corp
   Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-B7g43h8lejfC80kPrpIHWnBQ9GeveFFe9OcJrw1f2us=' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://plausible.io https://cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
 
 # HTML pages - short cache, must revalidate
