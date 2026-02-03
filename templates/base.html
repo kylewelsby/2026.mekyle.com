@@ -36,7 +36,7 @@
     <meta name="twitter:creator" content="@halfcube">
     <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }}{% endblock twitter_title %}">
     <meta name="twitter:description" content="{% block twitter_description %}{{ config.description }}{% endblock twitter_description %}">
-    <meta name="twitter:image" content="{{ config.base_url }}/images/og-image.jpg">
+    <meta name="twitter:image" content="{{ config.base_url }}/images/twitter-card.jpg">
 
     <!-- Structured Data: Person -->
     <script type="application/ld+json">
@@ -90,8 +90,8 @@
             "@type": "Person",
             "name": "{{ config.extra.author }}"
         },
-        "dateCreated": "2026-01-20",
-        "dateModified": "2026-01-20"
+        "dateCreated": "2026-01-20T12:00:00+00:00",
+        "dateModified": "{{ now() | date(format='%Y-%m-%dT%H:%M:%S+00:00') }}"
     }
     </script>
 

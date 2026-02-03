@@ -1,5 +1,5 @@
 +++
-title = "Kyle Welsby | Senior Software Engineer"
+title = "Kyle Welsby | Senior Software Engineer · Architecture"
 template = "index.html"
 
 [extra]

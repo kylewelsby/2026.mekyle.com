@@ -2,8 +2,8 @@
 # https://www.getzola.org/documentation/getting-started/configuration/
 
 base_url = "https://mekyle.com"
-title = "Kyle Welsby | Senior Software Engineer"
-description = "Senior Software Engineer specialising in AI Systems and Financial Platforms"
+title = "Kyle Welsby | Senior Software Engineer · Architecture"
+description = "Senior Software Engineer building platforms at scale. 15 years shipping distributed systems across e-commerce, fintech and government. Based in Manchester, UK."
 default_language = "en"
 
 # Compilation settings
@@ -35,7 +35,7 @@ anchors = "on"
 [extra]
 author = "Kyle Welsby"
 author_email = "halfcubeuk@gmail.com"
-keywords = ["Senior Software Engineer", "Staff Level", "AI Systems", "Financial Platforms", "Fintech", "Distributed Systems"]
+keywords = ["Senior Software Engineer", "Staff Level", "Distributed Systems", "Software Architecture", "Technical Leadership", "System Design"]
 
 # Social links
 github = "https://github.com/kylewelsby"
