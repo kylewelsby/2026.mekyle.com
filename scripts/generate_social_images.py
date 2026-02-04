@@ -50,6 +50,7 @@ DEFAULTS = {
     "accent": "#88C0D0",
     "text_secondary": "#D8DEE9",
     "tagline": "Distributed Systems · Architecture · Manchester",
+    "cta": "View my work \u2192 mekyle.com",
 }
 
 # Font paths (macOS + Linux fallbacks)
@@ -181,9 +182,9 @@ def generate(config, colours):
         font=font_cta,
     )
 
-    # URL
-    domain = config["base_url"].replace("https://", "").replace("http://", "")
-    draw.text((text_x, 430), domain, fill=accent, font=font_url)
+    # CTA
+    font_cta_bold = load_font(BOLD_FONT_PATHS, 22)
+    draw.text((text_x, 420), colours["cta"], fill=accent, font=font_cta_bold)
 
     # Save OG image
     img.convert("RGB").save(OUTPUT_OG, "JPEG", quality=90, optimize=True)
@@ -237,6 +238,11 @@ def parse_args():
         default=DEFAULTS["text_secondary"],
         help=f"Secondary text hex colour (default: {DEFAULTS['text_secondary']})",
     )
+    parser.add_argument(
+        "--cta",
+        default=DEFAULTS["cta"],
+        help=f"Call-to-action text (default: {DEFAULTS['cta']})",
+    )
     return parser.parse_args()
 
 
@@ -259,6 +265,7 @@ def main():
         "accent": args.accent,
         "text_secondary": args.text_secondary,
         "tagline": args.tagline,
+        "cta": args.cta,
     }
 
     print(f"  Name:    {config['name']}")
