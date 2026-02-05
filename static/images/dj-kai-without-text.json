@@ -1,0 +1,360 @@
+{
+  "image_metadata": {
+    "source_file": "DJ Kai - without text@1x.png",
+    "format": "PNG",
+    "framing": "circular_crop_with_transparent_exterior",
+    "subject": "DJ Kai",
+    "generated_by": "claude_vision",
+    "reference_compared": "image2json.com"
+  },
+  "reconstruction_priority": {
+    "face": 10,
+    "lighting": 9,
+    "colors": 8,
+    "hair": 8,
+    "body_pose": 7,
+    "clothing": 7,
+    "background": 6
+  },
+  "explicit_negatives": {
+    "face": [
+      "no_glasses",
+      "no_moles",
+      "no_scars",
+      "no_makeup",
+      "no_piercings"
+    ],
+    "body": [
+      "no_tattoos",
+      "no_visible_veins"
+    ],
+    "clothing": [
+      "no_logos",
+      "no_patterns",
+      "no_jewelry"
+    ],
+    "scene": [
+      "no_other_people",
+      "no_text",
+      "no_animals",
+      "no_watermarks"
+    ],
+    "style": [
+      "not_black_and_white",
+      "not_filtered",
+      "not_illustration",
+      "not_cartoon",
+      "not_painting"
+    ]
+  },
+  "background": {
+    "type": "gradient_circle",
+    "shape": "circular_mask",
+    "exterior": "transparent",
+    "gradient": {
+      "type": "radial",
+      "center_hex": "#3B7DB5",
+      "edge_hex": "#1B3A5C",
+      "direction": "centre_outward"
+    },
+    "depth_of_field": "none_solid_colour",
+    "lighting_contribution": "cool_blue_ambient_fill"
+  },
+  "clothing": {
+    "top": {
+      "type": "polo_shirt",
+      "color_hex": "#1C2333",
+      "color_description": "very_dark_navy",
+      "fit": "fitted",
+      "collar": {
+        "type": "polo_collar",
+        "state": "held_up_by_hands",
+        "visibility": "prominent"
+      },
+      "sleeves": "short_sleeves",
+      "fabric_appearance": "cotton_knit",
+      "wrinkles": "minimal_fabric_tension_at_collar"
+    },
+    "accessories": "none"
+  },
+  "face": {
+    "overall_shape": "oblong",
+    "skull_structure": {
+      "forehead_width": "average",
+      "forehead_height": "tall",
+      "forehead_shape": "rounded",
+      "temple_width": "average",
+      "cheekbone_prominence": "moderate",
+      "cheekbone_position": "middle",
+      "jaw_angle": "angular",
+      "jaw_width": "average",
+      "chin_shape": "rounded",
+      "chin_length": "average",
+      "face_length_to_width_ratio": "long_narrow"
+    },
+    "facial_proportions": {
+      "eye_spacing_ratio": "average_1_eye_width_apart",
+      "nose_to_face_ratio": "proportional",
+      "mouth_width_to_nose_ratio": "wider",
+      "upper_lip_to_nose_distance": "average",
+      "lower_face_proportion": "balanced"
+    },
+    "skin": {
+      "tone_hex": "#9C715A",
+      "undertone": "warm_yellow",
+      "tone_uniformity": "slight_variation",
+      "texture_closeup": "visible_pores",
+      "texture_areas": {
+        "forehead": "visible_pores",
+        "cheeks": "smooth",
+        "nose": "visible_pores",
+        "chin": "visible_pores"
+      },
+      "shine_level": "natural",
+      "shine_locations": [
+        "forehead",
+        "nose_bridge",
+        "cheekbones"
+      ],
+      "conditions": [
+        "subtle_smile_lines",
+        "subtle_forehead_lines"
+      ],
+      "visible_veins": "none"
+    },
+    "eyes": {
+      "color": {
+        "primary_hex": "#5A3A2B",
+        "secondary_hex": null,
+        "limbal_ring": "subtle",
+        "description": "deep_brown"
+      },
+      "shape": "almond_deep_set",
+      "size": "medium",
+      "symmetry": "symmetrical",
+      "eye_opening": "narrowed_smile_squint",
+      "inner_corner": "pointed",
+      "outer_corner": "neutral",
+      "eyelid_crease": "defined",
+      "eyelid_exposure": "moderate",
+      "under_eye": "smooth_fine_lines",
+      "sclera_color": "#E0DED9",
+      "pupil_size": "normal",
+      "gaze": {
+        "direction": "direct_camera",
+        "intensity": "warm_friendly"
+      },
+      "lashes": {
+        "natural_length": "short",
+        "natural_density": "average",
+        "mascara": "none",
+        "false_lashes": false,
+        "lash_curl": "natural_curl"
+      },
+      "eyebrows": {
+        "shape": "soft_arch",
+        "thickness": "medium",
+        "fullness": "full",
+        "grooming": "natural",
+        "color_hex": "#3A2B21",
+        "color_match_to_hair": "matches",
+        "start_position": "at_inner_eye",
+        "arch_position": "middle",
+        "tail": "tapers_thin"
+      },
+      "eye_makeup": {
+        "level": 0,
+        "eyeshadow": "none",
+        "eyeliner": "none",
+        "under_eye_makeup": "none"
+      }
+    },
+    "nose": {
+      "overall_size": "medium",
+      "bridge": {
+        "width": "average",
+        "height": "medium",
+        "profile": "straight"
+      },
+      "tip": {
+        "shape": "rounded",
+        "width": "average",
+        "definition": "defined"
+      },
+      "nostrils": {
+        "shape": "oval",
+        "visibility": "visible",
+        "symmetry": "symmetrical"
+      },
+      "nose_to_lip_area": "average"
+    },
+    "mouth": {
+      "width": "wider",
+      "lip_shape": {
+        "overall": "medium",
+        "upper_lip": "medium_m_shaped",
+        "lower_lip": "full",
+        "ratio": "lower_fuller",
+        "cupids_bow": "defined"
+      },
+      "lip_color": {
+        "natural_hex": "#B87D8B",
+        "current_hex": "#B87D8B",
+        "product_applied": false,
+        "product_type": "none"
+      },
+      "lip_texture": "smooth_natural_lines_natural_shine",
+      "corners": "upturned",
+      "state": "smiling_teeth",
+      "teeth_if_visible": {
+        "visibility": "full_smile",
+        "color_hex": "#F0F0F0",
+        "alignment": "straight",
+        "notable": "none"
+      }
+    },
+    "expression": {
+      "primary": "happy",
+      "intensity": 0.8,
+      "asymmetry": "symmetrical",
+      "micro_expressions": [
+        "crow_feet_active",
+        "lip_corner_pull",
+        "eye_squint"
+      ],
+      "muscle_activations": {
+        "forehead": "relaxed",
+        "brow": "neutral",
+        "eyes": "squinted",
+        "cheeks": "raised_smile",
+        "mouth": "corners_up"
+      }
+    },
+    "facial_hair": {
+      "present": true,
+      "type": "short_beard_mustache",
+      "length_mm": 5,
+      "density": "dense",
+      "color_hex": "#3A2B21",
+      "gray_percentage": 0,
+      "grooming": "trimmed"
+    },
+    "distinctive_marks": {
+      "moles": [],
+      "scars": [],
+      "birthmarks": [],
+      "freckles": {
+        "density": "not_clearly_visible",
+        "distribution": "uncertain_at_image_resolution"
+      },
+      "beauty_marks": [],
+      "other": [
+        "dimples_subtle_when_smiling"
+      ]
+    },
+    "head_position": {
+      "rotation_yaw": 0,
+      "tilt_roll": 0,
+      "pitch": 0,
+      "description": "facing_camera"
+    }
+  },
+  "hair": {
+    "present": true,
+    "type": "biological",
+    "color": {
+      "primary_hex": "#2B211A",
+      "secondary_hex": null,
+      "pattern": "solid",
+      "description": "very_dark_brown_curly_hair"
+    },
+    "properties": {
+      "texture": "curly_3b_3c",
+      "thickness": "medium",
+      "density": "thick",
+      "porosity_appearance": "normal"
+    },
+    "style": {
+      "cut": "short",
+      "layers": "subtle",
+      "current_style": "natural_down_slightly_messy",
+      "part": "none",
+      "bangs": "none"
+    },
+    "dimensions": {
+      "length_front": "above_eyebrow",
+      "length_back": "short",
+      "volume": "voluminous"
+    },
+    "dynamics": {
+      "movement": "static",
+      "placement": "framing_forehead"
+    },
+    "condition": {
+      "health": "normal",
+      "shine": "natural",
+      "frizz": "minimal"
+    },
+    "hairline": {
+      "visibility": "fully_visible",
+      "shape": "receding_m_shaped",
+      "baby_hairs": "NOT_VISIBLE"
+    },
+    "accessories": "none"
+  },
+  "body": {
+    "visibility": "bust",
+    "frame": {
+      "build": "athletic",
+      "shoulder_width": "average",
+      "proportions": "balanced"
+    },
+    "skin_body": {
+      "tone_match_face": true,
+      "visible_details": [
+        "collarbones_subtle",
+        "toned_arms"
+      ],
+      "tan_lines": "none"
+    },
+    "pose": {
+      "body_angle": "frontal",
+      "shoulder_line": "level",
+      "spine": "straight",
+      "weight_distribution": "centered"
+    },
+    "neck": {
+      "length": "average",
+      "visibility": "partial",
+      "details": "smooth"
+    },
+    "shoulders": {
+      "shape": "rounded",
+      "position": "relaxed",
+      "skin_details": "smooth_toned_muscle_definition"
+    },
+    "arms_if_visible": {
+      "visibility": "both_arms",
+      "position": "bent_hands_holding_collar_up",
+      "muscle_definition": "toned",
+      "skin_details": "smooth"
+    },
+    "hands_if_visible": {
+      "visibility": "both_full",
+      "position": "gripping_polo_collar",
+      "gesture": "playful_collar_pull",
+      "details": {
+        "skin_texture": "smooth",
+        "nail_length": "short",
+        "nail_shape": "natural",
+        "nail_color_hex": "natural",
+        "rings": "none",
+        "other_details": "none"
+      }
+    },
+    "chest_torso_if_visible": {
+      "visibility": "partial",
+      "shape": "muscular"
+    }
+  }
+}
