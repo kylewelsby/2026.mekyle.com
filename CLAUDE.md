@@ -78,7 +78,8 @@ Kyle is targeting **Staff/Principal IC roles** in AI Systems and Financial Platf
 ## Content Sources
 
 ### Professional
-- **Current role**: Senior Software Engineer at Ophelos/Intrum (acting Principal)
+- **Currently**: Founding ViaCara (independent venture, launching August 2026); open to Staff/Principal IC roles
+- **Most recent role**: Senior Software Engineer at Ophelos/Intrum (2023–2026, acting Principal)
 - **Previous**: Shopify (Senior), UK Public Sector & Fintech contracts
 - **Specialities**: Greenfield architecture, state-driven systems, Row Level Security, financially auditable ledgers, Spec-Driven Development
 

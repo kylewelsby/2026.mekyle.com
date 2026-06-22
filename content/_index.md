@@ -10,6 +10,7 @@ name = "Kyle Welsby"
 title = "Senior Software Engineer · Technical Architect"
 location = "Manchester, UK"
 relocation = "Open to relocation"
+status = "Founding ViaCara · launching August 2026"
 
 [[extra.hero.social]]
 name = "GitHub"
@@ -67,7 +68,7 @@ technologies = ["Ruby", "TypeScript", "PostgreSQL", "Redis", "Real-time Systems"
 # Experience Timeline
 
 [[extra.experience]]
-period = "2023–Present"
+period = "2023–2026"
 role = "Senior Software Engineer"
 company = "Ophelos/Intrum"
 scope = "Technical Architect, AI-first platform, cross-functional leadership"
@@ -126,6 +127,8 @@ title = "Spec-Driven Development"
 description = "Aligning humans and AI-assisted coding around shared intent. Document-first, code-later approach using deterministic decision engines for safety and cost control."
 type = "methodology"
 +++
+
+Most recently I architected the AI-first platform at Ophelos. Now I'm founding ViaCara, a venture launching August 2026.
 
 I'm a Senior Software Engineer who operates at Staff level: setting technical direction, aligning cross-functional stakeholders, and making the high-judgment trade-offs that shape platforms.
 

@@ -12,6 +12,10 @@ Kyle Welsby is a Senior Software Engineer operating at Staff level: setting tech
 
 His work spans fintech, regulated systems and AI-first platforms. He specialises in finding structural problems early: mapping hidden state complexity, advocating for architecture decisions that compound, and creating the clarity that lets teams move fast.
 
+## Current Focus
+
+As of June 2026, Kyle has departed Ophelos and is founding ViaCara, an independent venture launching August 2026. He is open to Staff and Principal IC roles in AI Systems and financial platforms.
+
 ## Impact Narratives
 
 ### AI-First Platform Architecture — Ophelos
@@ -61,7 +65,7 @@ Adopted organically across teams. Addresses cognitive load and colour-blind acce
 
 | Period | Role | Company | Scope |
 |--------|------|---------|-------|
-| 2023–Present | Senior Software Engineer | Ophelos/Intrum | Technical Architect, AI-first platform, cross-functional leadership |
+| 2023–2026 | Senior Software Engineer | Ophelos/Intrum | Technical Architect, AI-first platform, cross-functional leadership |
 | 2021–2023 | Senior Software Engineer | Shopify | Checkout/shipping performance, team of 6, large-scale systems |
 | 2013–2021 | Independent Contractor | MeKyle Ltd | Full-stack across fintech, government, e-commerce |
 | 2010–2012 | Software Developer | On The Beach | Agile development, holiday booking platforms |
