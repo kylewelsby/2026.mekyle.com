@@ -49,4 +49,4 @@ Curious how my portfolio has evolved? Here are the archives:
 
 - GitHub: [@kylewelsby](https://github.com/kylewelsby)
 - LinkedIn: [/in/mekyle](https://www.linkedin.com/in/mekyle/)
-- Email: halfcubeuk@gmail.com
+- Email: kyle.welsworth@pm.me

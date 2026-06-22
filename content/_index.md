@@ -1,12 +1,12 @@
 +++
-title = "Kyle Welsby | Senior Software Engineer · Architecture"
+title = "Kyle Welsworth | Senior Software Engineer · Architecture"
 template = "index.html"
 
 [extra]
 tagline = "I approach every system like I own the company. That conviction, combined with 15 years building platforms where correctness, security and cost matter as much as speed, helps teams navigate uncertainty and ship with confidence."
 
 [extra.hero]
-name = "Kyle Welsby"
+name = "Kyle Welsworth"
 title = "Senior Software Engineer · Technical Architect"
 location = "Manchester, UK"
 relocation = "Open to relocation"
@@ -24,7 +24,7 @@ icon = "linkedin"
 
 [[extra.hero.social]]
 name = "Email"
-url = "mailto:halfcubeuk@gmail.com"
+url = "mailto:kyle.welsworth@pm.me"
 icon = "mail"
 
 # Impact Narratives

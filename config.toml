@@ -1,8 +1,8 @@
-# Kyle Welsby Portfolio 2026
+# Kyle Welsworth Portfolio 2026
 # https://www.getzola.org/documentation/getting-started/configuration/
 
 base_url = "https://mekyle.com"
-title = "Kyle Welsby | Senior Software Engineer · Architecture"
+title = "Kyle Welsworth | Senior Software Engineer · Architecture"
 description = "Senior Software Engineer building platforms at scale. 15 years shipping distributed systems across e-commerce, fintech and government. Based in Manchester, UK."
 default_language = "en"
 
@@ -33,8 +33,8 @@ anchors = "on"
 
 # Site-wide extra variables
 [extra]
-author = "Kyle Welsby"
-author_email = "halfcubeuk@gmail.com"
+author = "Kyle Welsworth"
+author_email = "kyle.welsworth@pm.me"
 keywords = ["Senior Software Engineer", "Staff Level", "Distributed Systems", "Software Architecture", "Technical Leadership", "System Design"]
 
 # Social links

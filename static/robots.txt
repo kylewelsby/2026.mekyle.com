@@ -7,4 +7,4 @@ Allow: /
 Sitemap: https://mekyle.com/sitemap.xml
 
 # AI-readable content
-# See /llms.txt for AI-friendly information about Kyle Welsby
+# See /llms.txt for AI-friendly information about Kyle Welsworth
