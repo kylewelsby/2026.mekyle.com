@@ -1,6 +1,9 @@
 # Zola build output
 public/
 
+# Zola binary fetched by build.sh fallback when mise is unavailable
+/zola
+
 # macOS
 .DS_Store
 
