@@ -26,7 +26,7 @@
     <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock og_description %}">
     <meta property="og:type" content="{% block og_type %}website{% endblock og_type %}">
     <meta property="og:url" content="{% block og_url %}{{ config.base_url }}{% endblock og_url %}">
-    <meta property="og:image" content="{{ config.base_url }}/images/og-image.jpg">
+    <meta property="og:image" content="{{ config.base_url }}/images/og-image.jpg?v=2026-10-19-2">
     <meta property="og:locale" content="en_GB">
     <meta property="og:site_name" content="{{ config.extra.author }}">
 
@@ -36,7 +36,7 @@
     <meta name="twitter:creator" content="@halfcube">
     <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }}{% endblock twitter_title %}">
     <meta name="twitter:description" content="{% block twitter_description %}{{ config.description }}{% endblock twitter_description %}">
-    <meta name="twitter:image" content="{{ config.base_url }}/images/twitter-card.jpg">
+    <meta name="twitter:image" content="{{ config.base_url }}/images/twitter-card.jpg?v=2026-10-19-2">
 
     <!-- Structured Data: Person -->
     <script type="application/ld+json">
@@ -45,7 +45,12 @@
         "@type": "Person",
         "name": "{{ config.extra.author }}",
         "alternateName": "Kyle Welsby",
-        "jobTitle": "Senior Software Engineer",
+        "jobTitle": "Founder",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "ViaCara",
+            "url": "https://viacara.com/"
+        },
         "url": "{{ config.base_url }}",
         "email": "{{ config.extra.author_email }}",
         "sameAs": [
@@ -70,6 +75,7 @@
             "State-Driven Architecture",
             "Row Level Security",
             "Spec-Driven Development",
+            "Product Software Engineering",
             "TypeScript",
             "Ruby",
             "PostgreSQL",
@@ -96,11 +102,10 @@
     }
     </script>
 
-    <!-- Preload critical resources -->
+    {% block styles %}
     <link rel="preload" href="/style.css?v={{ now() | date(format='%s') }}" as="style">
-
-    <!-- Styles -->
     <link rel="stylesheet" href="/style.css?v={{ now() | date(format='%s') }}">
+    {% endblock styles %}
 
     <!-- Plausible Analytics (privacy-respecting, self-hosted script) -->
     <script defer data-domain="{{ config.extra.plausible_domain }}" data-api="https://plausible.io/api/event" src="/js/plausible.js"></script>
@@ -129,6 +134,7 @@
 
     {% block body %}{% endblock body %}
 
+    {% block footer %}
     <footer class="site-footer">
         <div class="container">
             <nav class="footer__links" aria-label="Social links">
@@ -153,6 +159,7 @@
             <p>&copy; {{ now() | date(format="%Y") }} {{ config.extra.author }}. Built with <a href="https://www.getzola.org/" rel="noopener">Zola</a>. <a href="/privacy/">Privacy</a></p>
         </div>
     </footer>
+    {% endblock footer %}
 
     <script>/* EOF:https://mekyle.com */</script>
 </body>

@@ -2,8 +2,8 @@
 # https://www.getzola.org/documentation/getting-started/configuration/
 
 base_url = "https://mekyle.com"
-title = "Kyle Welsworth | Senior Software Engineer · Architecture"
-description = "Senior Software Engineer building platforms at scale. 15 years shipping distributed systems across e-commerce, fintech and government. Based in Manchester, UK."
+title = "Kyle Welsworth | Founder of ViaCara and software engineer"
+description = "Founder of ViaCara, connecting clients with therapists, counsellors, hypnotherapists and coaches. Building software since 1999. Manchester, UK."
 default_language = "en"
 
 # Compilation settings
@@ -35,7 +35,7 @@ anchors = "on"
 [extra]
 author = "Kyle Welsworth"
 author_email = "kyle.welsworth@pm.me"
-keywords = ["Senior Software Engineer", "Staff Level", "Distributed Systems", "Software Architecture", "Technical Leadership", "System Design"]
+keywords = ["ViaCara", "Founder", "Product Software Engineering", "AI Systems", "Regulated Platforms", "Manchester"]
 
 # Social links
 github = "https://github.com/kylewelsby"
