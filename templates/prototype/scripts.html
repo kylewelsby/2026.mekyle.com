@@ -1,0 +1,80 @@
+<script>
+(function () {
+    document.querySelectorAll(".js-film").forEach(function (film) {
+        var video = film.querySelector("video");
+        var play = film.querySelector("[data-film-play]");
+        if (!video || !play) return;
+        play.addEventListener("click", function () {
+            video.controls = true;
+            play.hidden = true;
+            video.play();
+        });
+    });
+
+    var root = document.querySelector(".pv-c");
+    if (!root) return;
+
+    root.querySelectorAll(".c-plate img[data-focus]").forEach(function (img) {
+        img.style.objectPosition = img.getAttribute("data-focus");
+    });
+
+    var plates = Array.prototype.slice.call(root.querySelectorAll(".js-plate"));
+    plates.forEach(function (p) { p.style.setProperty("--ink", p.getAttribute("data-ink")); });
+    var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+            if (e.isIntersecting && document.documentElement.getAttribute("data-pv") === "C") {
+                document.documentElement.style.setProperty("--c-ground", e.target.getAttribute("data-ground"));
+                document.documentElement.style.setProperty("--c-nav-ink", e.target.getAttribute("data-ink"));
+            }
+        });
+    }, { rootMargin: "-45% 0px -45% 0px" });
+    plates.forEach(function (p) { io.observe(p); });
+
+    var main = root.querySelector(".c-plates");
+    var svg = root.querySelector(".c-leader");
+    var line = svg.querySelector("line");
+    var dot = svg.querySelector("circle");
+
+    function mapPoint(img, px, py) {
+        var box = img.getBoundingClientRect();
+        var nw = img.naturalWidth || img.width;
+        var nh = img.naturalHeight || img.height;
+        var scale = Math.max(box.width / nw, box.height / nh);
+        var dw = nw * scale, dh = nh * scale;
+        var pos = (img.style.objectPosition || "50% 50%").split(" ").map(parseFloat);
+        return {
+            x: box.left + (box.width - dw) * pos[0] / 100 + dw * px / 100,
+            y: box.top + (box.height - dh) * pos[1] / 100 + dh * py / 100
+        };
+    }
+
+    function show(li) {
+        if (window.matchMedia("(max-width: 720px)").matches) return;
+        var plate = li.closest(".c-plate");
+        var img = plate.querySelector("img");
+        var xy = li.getAttribute("data-point").split(",").map(Number);
+        var target = mapPoint(img, xy[0], xy[1]);
+        var origin = li.getBoundingClientRect();
+        var m = main.getBoundingClientRect();
+        var x1 = origin.left + 4 - m.left, y1 = origin.top + 21 - m.top;
+        var x2 = target.x - m.left, y2 = target.y - m.top;
+        line.setAttribute("x1", x1); line.setAttribute("y1", y1);
+        line.setAttribute("x2", x2); line.setAttribute("y2", y2);
+        dot.setAttribute("cx", x2); dot.setAttribute("cy", y2);
+        svg.style.setProperty("--len", Math.hypot(x2 - x1, y2 - y1).toFixed(1));
+        svg.classList.remove("is-on");
+        void svg.getBoundingClientRect();
+        svg.classList.add("is-on");
+    }
+
+    function hide() { svg.classList.remove("is-on"); }
+
+    root.querySelectorAll("li[data-point]").forEach(function (li) {
+        li.tabIndex = 0;
+        li.addEventListener("mouseenter", function () { show(li); });
+        li.addEventListener("focus", function () { show(li); });
+        li.addEventListener("mouseleave", hide);
+        li.addEventListener("blur", hide);
+    });
+})();
+</script>

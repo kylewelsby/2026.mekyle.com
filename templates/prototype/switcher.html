@@ -1,0 +1,58 @@
+{% if get_env(name="CF_PAGES_BRANCH", default="local") != "main" %}
+<div class="pv-switcher" role="toolbar" aria-label="Prototype variant switcher">
+    <button type="button" class="pv-switcher__arrow" data-pv-step="-1" aria-label="Previous variant">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <span class="pv-switcher__label" aria-live="polite"></span>
+    <button type="button" class="pv-switcher__arrow" data-pv-step="1" aria-label="Next variant">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+</div>
+<style>
+.pv-switcher{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:9999;display:flex;align-items:center;gap:4px;padding:6px;border-radius:999px;background:#111;color:#fff;font:600 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;box-shadow:0 8px 28px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.18);letter-spacing:0}
+.pv-switcher__arrow{display:grid;place-items:center;width:34px;height:34px;border:0;border-radius:999px;background:#2a2a2a;color:#fff;cursor:pointer}
+.pv-switcher__arrow:hover,.pv-switcher__arrow:focus-visible{background:#ffd400;color:#111;outline:none}
+.pv-switcher__label{min-width:15rem;padding:0 10px;text-align:center;white-space:nowrap}
+</style>
+{% endif %}
+<script>
+(function () {
+    var panes = Array.prototype.slice.call(document.querySelectorAll("[data-variant]"));
+    var keys = panes.map(function (p) { return p.getAttribute("data-variant"); });
+    var label = document.querySelector(".pv-switcher__label");
+
+    function show(key) {
+        if (keys.indexOf(key) === -1) key = keys[0];
+        panes.forEach(function (p) {
+            var on = p.getAttribute("data-variant") === key;
+            p.hidden = !on;
+            if (!on) p.querySelectorAll("video").forEach(function (v) { v.pause(); });
+        });
+        document.documentElement.setAttribute("data-pv", key);
+        var pane = panes[keys.indexOf(key)];
+        if (label) label.textContent = key + " — " + pane.getAttribute("data-variant-name");
+        var url = new URL(window.location.href);
+        url.searchParams.set("variant", key);
+        history.replaceState(null, "", url);
+        return key;
+    }
+
+    var current = show(new URLSearchParams(window.location.search).get("variant") || keys[0]);
+
+    function step(n) {
+        var i = (keys.indexOf(current) + n + keys.length) % keys.length;
+        current = show(keys[i]);
+        window.scrollTo(0, 0);
+    }
+
+    document.querySelectorAll("[data-pv-step]").forEach(function (b) {
+        b.addEventListener("click", function () { step(Number(b.getAttribute("data-pv-step"))); });
+    });
+    document.addEventListener("keydown", function (e) {
+        var t = e.target;
+        if (t && (t.closest("input, textarea, select, [contenteditable]"))) return;
+        if (e.key === "ArrowLeft") step(-1);
+        if (e.key === "ArrowRight") step(1);
+    });
+})();
+</script>

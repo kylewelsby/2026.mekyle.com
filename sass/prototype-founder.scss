@@ -1,0 +1,16 @@
+// PROTOTYPE stylesheet for the founder homepage variants. Throwaway branch only.
+
+html[data-pv]:not([data-pv="Now"]) .site-footer { display: none; }
+html[data-pv]:not([data-pv="Now"]) { scroll-padding-top: 5rem; }
+
+@import "prototype/a";
+@import "prototype/b";
+@import "prototype/c";
+
+@media (prefers-reduced-motion: reduce) {
+    .pv-pane *, .pv-pane *::before, .pv-pane *::after {
+        animation-duration: 1ms !important;
+        transition-duration: 1ms !important;
+        scroll-behavior: auto !important;
+    }
+}
