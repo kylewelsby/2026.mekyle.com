@@ -4,6 +4,6 @@
   "plate-curtain-pink-tall-1680.webp": "flux-pro-1.0-expand, top +200 rows above plate-curtain-pink",
   "kyle-curtain-arms-crossed-tall-1200.webp": "flux-pro-1.0-expand, top +302 rows",
   "curtain-tile-1680.webp": "plate-curtain-pink with Kyle removed (flux-pro-1.0-fill), stacked with its vertical mirror",
-  "curtain-blend-1680.webp": "flux-kontext-pro ombre over a pink-to-grey composite; ends crossfade into the clean curtain and row 0 of plate-curtain-grey-laptop",
+  "curtain-blend-1680.webp": "flux-pro-1.0-expand grew the grey linen curtain of plate-curtain-grey-laptop upward; the linen was dyed to the pink velvet palette by brightness, and the velvet folds were warped into the linen folds row by row (DTW on fold profiles). Last row is row 0 of plate-curtain-grey-laptop",
   "floor-blend-1680.webp": "flux-kontext-pro defocus haze over a mirrored floor composite; ends match the last row of plate-curtain-grey-laptop and row 0 of plate-sofa"
 }

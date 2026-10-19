@@ -13,7 +13,7 @@ $d-storm: #5E5E66;
 $d-overcast: #D5D5D5;
 $d-font: "Urbanist", system-ui, sans-serif;
 
-html[data-pv="D"] {
+html[data-pv="D"], html[data-pv="E"] {
     background: $d-lilac;
     body { background: $d-lilac; }
     ::selection { background: $d-blue; color: $d-sheet; }
@@ -100,6 +100,26 @@ html[data-pv="D"] {
     }
 }
 
+.d-hero--name {
+    .d-hero__name img { filter: drop-shadow(0 0.3vw 1.8vw rgba(88, 36, 52, 0.3)); }
+    .d-hero__kyle, .d-hero__welsworth { display: none; }
+    .d-hero__full { display: block; top: calc(100% * 230 / 1144); left: 4%; width: 92%; }
+
+    @media (max-width: 720px) {
+        .d-hero__name .d-hero__full { display: none; }
+        .d-hero__kyle, .d-hero__welsworth { display: block; left: 6%; }
+        .d-hero__kyle { top: calc(100% * 251 / 1502); width: 33.81%; }
+        .d-hero__welsworth { top: calc(100% * 409.5 / 1502); width: 88%; }
+        .d-hero__cutout {
+            display: block;
+            top: calc(100% * 302 / 1502);
+            left: 0;
+            width: 100%;
+            height: calc(100% * 1200 / 1502);
+        }
+    }
+}
+
 @keyframes d-rise {
     from { transform: translate(-50%, -30%); opacity: 0; }
     to { transform: translate(-50%, -50%); opacity: 1; }
@@ -131,7 +151,7 @@ html[data-pv="D"] {
         right: 0;
         bottom: 0;
         left: 0;
-        aspect-ratio: 1680 / 1000;
+        aspect-ratio: 1680 / 1100;
         background: url("/prototype-media/curtain-blend-1680.webp") center / 100% 100% no-repeat;
         -webkit-mask: linear-gradient(transparent, #000 30%);
         mask: linear-gradient(transparent, #000 30%);
@@ -141,7 +161,7 @@ html[data-pv="D"] {
     @media (max-width: 720px) {
         background-size: 222.46% auto;
 
-        &__blend { aspect-ratio: auto; height: calc(100vw * 1000 / 944 * 1.25); background-size: 222.46% 100%; }
+        &__blend { aspect-ratio: auto; height: calc(100vw * 1100 / 944 * 1.25); background-size: 222.46% 100%; }
     }
 }
 

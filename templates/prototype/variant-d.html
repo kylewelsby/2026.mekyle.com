@@ -1,6 +1,6 @@
-{#- PROTOTYPE variant D: portrait plates carrying the founder's letter. -#}
-<main id="main-d" class="d-page">
-    <section class="d-hero">
+{#- PROTOTYPE variants D and E: portrait plates carrying the founder's letter. E (`hero = "name"`) drops the ViaCara logo from the hero. -#}
+<main id="main-{{ dp }}" class="d-page">
+    <section class="d-hero{% if hero == "name" %} d-hero--name{% endif %}">
         <picture>
             <source media="(max-width: 720px)" srcset="/prototype-media/kyle-curtain-arms-crossed-tall-1200.webp">
             <img class="d-hero__plate" src="/prototype-media/plate-curtain-pink-tall-1680.webp" alt="" width="1680" height="1144" fetchpriority="high" decoding="async">
@@ -11,13 +11,15 @@
             <img class="d-hero__welsworth" src="/prototype/brand/welsworth-white.svg" alt="" width="942" height="200">
             <img class="d-hero__full" src="/prototype/brand/kyle-welsworth-white.svg" alt="" width="1356" height="200">
         </h1>
+        {%- if hero != "name" %}
         <img class="d-hero__logo" src="/prototype/brand/logo-lockup-white.svg" alt="ViaCara" width="1448" height="294">
+        {%- endif %}
         <img class="d-hero__cutout" src="/prototype-media/kyle-curtain-arms-crossed-cutout.webp" alt="Kyle, arms crossed and smiling, in front of a dusty-pink velvet curtain" width="1067" height="1600" decoding="async">
     </section>
 
     <section class="d-curtain">
         <div class="d-curtain__blend" aria-hidden="true"></div>
-        <article class="d-letter" aria-labelledby="d-hey">
+        <article class="d-letter" aria-labelledby="{{ dp }}-hey">
             <header class="d-letterhead">
                 <div class="d-letterhead__from">
                     <p class="d-letterhead__name"><img src="/prototype/brand/kyle-welsworth-blue.svg" alt="Kyle Welsworth" width="704" height="102"></p>
@@ -25,18 +27,18 @@
                 </div>
                 <nav class="d-letterhead__links" aria-label="Quick links">
                     <a class="d-pill d-pill--small" href="https://viacara.com/for/">Join ViaCara</a>
-                    <a class="d-quiet-link" href="#d-ps">Hiring? Read the P.S.</a>
+                    <a class="d-quiet-link" href="#{{ dp }}-ps">Hiring? Read the P.S.</a>
                 </nav>
             </header>
 
-            <h2 id="d-hey" class="d-hey">Hey, <em class="d-mark d-mark--line">Kyle</em> here.</h2>
+            <h2 id="{{ dp }}-hey" class="d-hey">Hey, <em class="d-mark d-mark--line">Kyle</em> here.</h2>
 
             <p class="d-p d-p--lead">I'm building ViaCara to connect clients with therapists, counsellors, hypnotherapists and coaches on a deeper level.</p>
             <p class="d-p d-p--quiet">I recorded a short film about why.</p>
 
             <figure class="d-film js-film">
                 <div class="d-film__frame">
-                    <video preload="none" playsinline poster="/prototype-media/poster-live.webp" width="1280" height="720" aria-describedby="d-film-caption">
+                    <video preload="none" playsinline poster="/prototype-media/poster-live.webp" width="1280" height="720" aria-describedby="{{ dp }}-film-caption">
                         <source src="https://assets.viacara.com/video/founder-film-1080p.cabb65f5566feaa0.mp4" type="video/mp4">
                         <track kind="captions" srclang="en" label="English" src="/prototype/founder-film.en.vtt">
                     </video>
@@ -45,7 +47,7 @@
                         <span>Play the film <span class="d-film__time">1 min 37 s</span></span>
                     </button>
                 </div>
-                <figcaption id="d-film-caption">Captions are in the picture. The illustrations in this film were made with AI. <a href="#d-transcript">Read the transcript</a></figcaption>
+                <figcaption id="{{ dp }}-film-caption">Captions are in the picture. The illustrations in this film were made with AI. <a href="#{{ dp }}-transcript">Read the transcript</a></figcaption>
             </figure>
 
             <p class="d-p">It started at home. My partner is an independent therapist. Her diary stayed full while others around her waited for clients. Good practitioners are being asked to be marketers, and I've built software since 1999. So I'm building the part that helps connect clients with how they work.</p>
@@ -62,14 +64,14 @@
                 <p class="d-sign__role">Kyle Welsworth, founder of ViaCara</p>
             </footer>
 
-            <details id="d-transcript" class="d-transcript">
+            <details id="{{ dp }}-transcript" class="d-transcript">
                 <summary>Film transcript</summary>
                 <p>Are you a marketing expert? Probably not. But you still want to gain clients. And that's why I built ViaCara. Hi, I'm Kyle, founder of ViaCara. My partner, she's a therapist, and she started about a year ago. I saw as she was building her practice the certain things which she had to overcome in order to gain clients. And as a software engineer of over two decades, I saw that I had the skills to solve this problem. I want you to do the best work you can. And you don't have to become an expert in marketing. ViaCara is a platform which allows clients to express what their needs are, their goals and the logistics on how they want to be met. Practitioners come on and share their personality, their lived experiences and all their credentials. So the plan: we will be focusing our marketing efforts in Manchester initially and expanding out to the rest of the nation. We don't have a subscription model. It is free to set up an account and we give you two free introductions to trial us out. If you have any questions, please send me an email or send me a message and I'd be more than happy to answer those. I want to make this work for you. So join on to ViaCara and I look forward to seeing you there.</p>
             </details>
         </article>
     </section>
 
-    <section id="d-ps" class="d-plate d-plate--engineer" aria-labelledby="d-ps-title">
+    <section id="{{ dp }}-ps" class="d-plate d-plate--engineer" aria-labelledby="{{ dp }}-ps-title">
         <figure class="d-plate__figure">
             <picture>
                 <img src="/prototype-media/plate-curtain-grey-laptop-1680.webp" alt="Kyle Welsworth in an armchair with a laptop on his knee beside a large plant" width="1680" height="944" loading="lazy" decoding="async">
@@ -78,7 +80,7 @@
         <div class="d-floor">
         <div class="d-caption">
             <div class="d-caption__lead">
-                <h2 id="d-ps-title" class="d-caption__title">P.S. I'm also an engineer.</h2>
+                <h2 id="{{ dp }}-ps-title" class="d-caption__title">P.S. I'm also an engineer.</h2>
                 <p class="d-caption__text">Alongside ViaCara, I take on a small number of contract engagements in product software engineering, for AI systems and regulated platforms.</p>
                 <a class="d-pill" href="mailto:kyle.welsworth@pm.me">Email kyle.welsworth@pm.me</a>
             </div>
@@ -106,7 +108,7 @@
         </div>
     </section>
 
-    <section class="d-plate d-plate--off" aria-labelledby="d-off-title">
+    <section class="d-plate d-plate--off" aria-labelledby="{{ dp }}-off-title">
         <div class="d-off__scene" aria-hidden="true"></div>
         <figure class="d-off__figure">
             <picture>
@@ -115,7 +117,7 @@
         </figure>
         <div class="d-caption d-caption--off">
             <div class="d-caption__lead">
-                <h2 id="d-off-title" class="d-caption__title">Off duty.</h2>
+                <h2 id="{{ dp }}-off-title" class="d-caption__title">Off duty.</h2>
             </div>
             <ul class="d-record d-record--off">
                 <li><strong>Decks</strong> <p>Mixes on <a href="https://soundcloud.com/mekyle" rel="noopener" target="_blank">SoundCloud</a> and <a href="https://www.mixcloud.com/kylewelsby/" rel="noopener" target="_blank">Mixcloud</a>.</p></li>
