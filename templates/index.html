@@ -8,7 +8,10 @@
 {% endblock head %}
 
 {% block body %}
-<div class="pv-pane pv-a" data-variant="A" data-variant-name="Decision record">
+<div class="pv-pane pv-d" data-variant="D" data-variant-name="Plates and letter">
+    {% include "prototype/variant-d.html" %}
+</div>
+<div class="pv-pane pv-a" data-variant="A" data-variant-name="Decision record" hidden>
     {% include "prototype/variant-a.html" %}
 </div>
 <div class="pv-pane pv-b" data-variant="B" data-variant-name="Founder's letter" hidden>

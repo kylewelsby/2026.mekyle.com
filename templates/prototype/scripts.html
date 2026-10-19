@@ -30,51 +30,54 @@
     }, { rootMargin: "-45% 0px -45% 0px" });
     plates.forEach(function (p) { io.observe(p); });
 
-    var main = root.querySelector(".c-plates");
-    var svg = root.querySelector(".c-leader");
-    var line = svg.querySelector("line");
-    var dot = svg.querySelector("circle");
+    function leaders(main, svg, plateSel) {
+        var line = svg.querySelector("line");
+        var dot = svg.querySelector("circle");
 
-    function mapPoint(img, px, py) {
-        var box = img.getBoundingClientRect();
-        var nw = img.naturalWidth || img.width;
-        var nh = img.naturalHeight || img.height;
-        var scale = Math.max(box.width / nw, box.height / nh);
-        var dw = nw * scale, dh = nh * scale;
-        var pos = (img.style.objectPosition || "50% 50%").split(" ").map(parseFloat);
-        return {
-            x: box.left + (box.width - dw) * pos[0] / 100 + dw * px / 100,
-            y: box.top + (box.height - dh) * pos[1] / 100 + dh * py / 100
-        };
+        function mapPoint(img, px, py) {
+            var box = img.getBoundingClientRect();
+            var nw = img.naturalWidth || img.width;
+            var nh = img.naturalHeight || img.height;
+            var scale = Math.max(box.width / nw, box.height / nh);
+            var dw = nw * scale, dh = nh * scale;
+            var pos = (img.style.objectPosition || "50% 50%").split(" ").map(parseFloat);
+            return {
+                x: box.left + (box.width - dw) * pos[0] / 100 + dw * px / 100,
+                y: box.top + (box.height - dh) * pos[1] / 100 + dh * py / 100
+            };
+        }
+
+        function show(li) {
+            if (window.matchMedia("(max-width: 720px)").matches) return;
+            var img = li.closest(plateSel).querySelector("img");
+            var xy = li.getAttribute("data-point").split(",").map(Number);
+            var target = mapPoint(img, xy[0], xy[1]);
+            var origin = li.getBoundingClientRect();
+            var m = main.getBoundingClientRect();
+            var x1 = origin.left + 4 - m.left, y1 = origin.top + 21 - m.top;
+            var x2 = target.x - m.left, y2 = target.y - m.top;
+            line.setAttribute("x1", x1); line.setAttribute("y1", y1);
+            line.setAttribute("x2", x2); line.setAttribute("y2", y2);
+            dot.setAttribute("cx", x2); dot.setAttribute("cy", y2);
+            svg.style.setProperty("--len", Math.hypot(x2 - x1, y2 - y1).toFixed(1));
+            svg.classList.remove("is-on");
+            void svg.getBoundingClientRect();
+            svg.classList.add("is-on");
+        }
+
+        function hide() { svg.classList.remove("is-on"); }
+
+        main.querySelectorAll("li[data-point]").forEach(function (li) {
+            li.tabIndex = 0;
+            li.addEventListener("mouseenter", function () { show(li); });
+            li.addEventListener("focus", function () { show(li); });
+            li.addEventListener("mouseleave", hide);
+            li.addEventListener("blur", hide);
+        });
     }
 
-    function show(li) {
-        if (window.matchMedia("(max-width: 720px)").matches) return;
-        var plate = li.closest(".c-plate");
-        var img = plate.querySelector("img");
-        var xy = li.getAttribute("data-point").split(",").map(Number);
-        var target = mapPoint(img, xy[0], xy[1]);
-        var origin = li.getBoundingClientRect();
-        var m = main.getBoundingClientRect();
-        var x1 = origin.left + 4 - m.left, y1 = origin.top + 21 - m.top;
-        var x2 = target.x - m.left, y2 = target.y - m.top;
-        line.setAttribute("x1", x1); line.setAttribute("y1", y1);
-        line.setAttribute("x2", x2); line.setAttribute("y2", y2);
-        dot.setAttribute("cx", x2); dot.setAttribute("cy", y2);
-        svg.style.setProperty("--len", Math.hypot(x2 - x1, y2 - y1).toFixed(1));
-        svg.classList.remove("is-on");
-        void svg.getBoundingClientRect();
-        svg.classList.add("is-on");
-    }
-
-    function hide() { svg.classList.remove("is-on"); }
-
-    root.querySelectorAll("li[data-point]").forEach(function (li) {
-        li.tabIndex = 0;
-        li.addEventListener("mouseenter", function () { show(li); });
-        li.addEventListener("focus", function () { show(li); });
-        li.addEventListener("mouseleave", hide);
-        li.addEventListener("blur", hide);
-    });
+    leaders(root.querySelector(".c-plates"), root.querySelector(".c-leader"), ".c-plate");
+    var d = document.querySelector(".pv-d .d-page");
+    if (d) leaders(d, d.querySelector(".d-leader"), ".d-plate");
 })();
 </script>

@@ -3,9 +3,12 @@
 html[data-pv]:not([data-pv="Now"]) .site-footer { display: none; }
 html[data-pv]:not([data-pv="Now"]) { scroll-padding-top: 5rem; }
 
+.pv-pane blockquote { margin: 0; padding: 0; border: 0; background: none; color: inherit; font-style: normal; }
+
 @import "prototype/a";
 @import "prototype/b";
 @import "prototype/c";
+@import "prototype/d";
 
 @media (prefers-reduced-motion: reduce) {
     .pv-pane *, .pv-pane *::before, .pv-pane *::after {
