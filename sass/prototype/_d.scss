@@ -35,22 +35,23 @@ html[data-pv="D"] {
 .d-hero {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 1680 / 944;
-    background: url("/prototype-media/curtain-strip.webp") center top / 100% 8px repeat-y;
+    aspect-ratio: 1680 / 1144;
+    background: url("/prototype-media/curtain-tile-1680.webp") center bottom / 100% auto repeat-y;
 
     picture { position: absolute; inset: 0; }
     &__plate {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        -webkit-mask: linear-gradient(to bottom, #000 72%, transparent 100%);
-        mask: linear-gradient(to bottom, #000 72%, transparent 100%);
+        -webkit-mask: linear-gradient(to bottom, #000 76%, transparent 100%);
+        mask: linear-gradient(to bottom, #000 76%, transparent 100%);
     }
 
     &__logo {
         position: absolute;
+        z-index: 1;
         left: 50%;
-        top: 37%;
+        top: 48%;
         width: 70%;
         height: auto;
         transform: translate(-50%, -50%);
@@ -59,10 +60,11 @@ html[data-pv="D"] {
 
     &__cutout {
         position: absolute;
-        top: 0;
+        z-index: 2;
+        top: calc(100% * 200 / 1144);
         left: calc(100% * 525 / 1680);
         width: calc(100% * 630 / 1680);
-        height: 100%;
+        height: calc(100% * 944 / 1144);
         object-fit: cover;
         object-position: 50% 0;
     }
@@ -70,27 +72,30 @@ html[data-pv="D"] {
     &__name {
         position: absolute;
         z-index: 1;
-        left: 15%;
-        top: 18.9%;
-        width: 27%;
+        inset: 0;
         margin: 0;
         line-height: 0;
-        transform: translateY(-50%);
+        pointer-events: none;
         animation: d-rise-name 1200ms cubic-bezier(0.16, 1, 0.3, 1) both;
 
-        img { display: block; width: 100%; height: auto; }
+        img { position: absolute; top: 27.33%; height: auto; }
     }
 
-    @media (max-width: 720px) {
-        aspect-ratio: 6 / 11;
+    &__kyle { left: 34.83%; width: 11.17%; }
+    &__welsworth { left: 54.3%; width: 29.05%; }
+    &__full { display: none; }
 
-        picture { inset: auto 0 0; aspect-ratio: 2 / 3; }
+    @media (max-width: 720px) {
+        aspect-ratio: 800 / 1502;
+        background-size: 222.46% auto;
+
         &__plate {
-            -webkit-mask: linear-gradient(to bottom, transparent, #000 22%, #000 86%, transparent);
-            mask: linear-gradient(to bottom, transparent, #000 22%, #000 86%, transparent);
+            -webkit-mask: linear-gradient(to bottom, #000 86%, transparent);
+            mask: linear-gradient(to bottom, #000 86%, transparent);
         }
-        &__name { left: 8%; top: 7.2%; width: 70%; }
-        &__logo { top: 18.6%; width: 84%; }
+        &__name img { display: none; }
+        &__name &__full { display: block; left: 15%; top: 9%; width: 70%; }
+        &__logo { top: 22%; width: 84%; }
         &__cutout { display: none; }
     }
 }
@@ -101,8 +106,17 @@ html[data-pv="D"] {
 }
 
 @keyframes d-rise-name {
-    from { transform: translateY(-20%); opacity: 0; }
-    to { transform: translateY(-50%); opacity: 1; }
+    from { transform: translateY(1.5%); opacity: 0; }
+    to { transform: none; opacity: 1; }
+}
+
+.d-sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
 }
 
 .d-curtain {
@@ -110,7 +124,25 @@ html[data-pv="D"] {
     position: relative;
     margin-top: -1px;
     padding: 0 clamp(1rem, 4vw, 3rem) clamp(4rem, 8vw, 7rem);
-    background: url("/prototype-media/curtain-strip.webp") center top / 100% 8px repeat-y;
+    background: url("/prototype-media/curtain-tile-1680.webp") center top / 100% auto repeat-y;
+
+    &__blend {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        aspect-ratio: 1680 / 1000;
+        background: url("/prototype-media/curtain-blend-1680.webp") center / 100% 100% no-repeat;
+        -webkit-mask: linear-gradient(transparent, #000 30%);
+        mask: linear-gradient(transparent, #000 30%);
+        pointer-events: none;
+    }
+
+    @media (max-width: 720px) {
+        background-size: 222.46% auto;
+
+        &__blend { aspect-ratio: auto; height: calc(100vw * 1000 / 944 * 1.25); background-size: 222.46% 100%; }
+    }
 }
 
 .d-letter {
@@ -276,33 +308,28 @@ html[data-pv="D"] {
         img, picture { display: block; width: 100%; height: 100%; object-fit: cover; }
     }
 
-    &--engineer {
-        isolation: isolate;
-        background: $d-grey;
-
-        &::before {
-            content: "";
-            position: absolute;
-            inset: -2px 0 auto;
-            aspect-ratio: 1680 / 944;
-            background: url("/prototype-media/curtain-strip.webp") center top / 100% 8px repeat-y;
-            -webkit-mask: linear-gradient(#000 45%, transparent 70%);
-            mask: linear-gradient(#000 45%, transparent 70%);
-            pointer-events: none;
-        }
-    }
-
-    &--engineer &__figure { position: relative; z-index: 1; }
-
-    &--engineer &__figure img {
-        $wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeGaussianBlur stdDeviation='3'/%3E%3C/filter%3E%3Cpath filter='url(%23b)' d='M-10 44C6 42 18 32 28 22S42 9 58 7S92 7 110 7L110 86C95 86 75 90 58 92S20 94-10 97Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
-        -webkit-mask: $wave;
-        mask: $wave;
-    }
 
     @media (max-width: 720px) {
-        &__figure, &--engineer::before { aspect-ratio: 4 / 5; }
+        &__figure { aspect-ratio: 4 / 5; }
     }
+}
+
+.d-floor {
+    position: relative;
+    isolation: isolate;
+    margin-top: -1px;
+    background: url("/prototype-media/floor-blend-1680.webp") center / 100% 100% no-repeat;
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 4% 3%;
+        background: radial-gradient(ellipse 52% 50% at 50% 50%, rgba(241, 241, 246, 0.74) 35%, rgba(241, 241, 246, 0) 100%);
+        pointer-events: none;
+    }
+
+    @media (max-width: 720px) { background-size: 222.46% 100%; }
 }
 
 .d-caption {
@@ -385,20 +412,6 @@ html[data-pv="D"] {
     filter: blur(56px) saturate(1.1);
     transform: scale(1.1);
     opacity: 0.9;
-
-    @media (max-width: 720px) { background-image: url("/prototype-media/kyle-sofa-wide-1200.webp"); }
-}
-
-.d-plate--off::before {
-    content: "";
-    position: absolute;
-    inset: -2px 0 auto;
-    height: clamp(12rem, 30vw, 26rem);
-    background:
-        radial-gradient(ellipse 62% 100% at 82% 0%, $d-grey 25%, rgba($d-grey, 0) 100%),
-        radial-gradient(ellipse 40% 55% at 12% 0%, $d-grey 20%, rgba($d-grey, 0) 100%),
-        linear-gradient($d-grey, rgba($d-grey, 0) 30%);
-    pointer-events: none;
 }
 
 .d-plate--off::after {
@@ -416,11 +429,10 @@ html[data-pv="D"] {
 .d-off__figure {
     position: relative;
     z-index: 1;
-    max-width: 92rem;
-    margin: 0 auto;
+    margin: -1px 0 0;
     aspect-ratio: 1680 / 944;
-    -webkit-mask: radial-gradient(ellipse 50% 50% at 50% 50%, #000 55%, transparent 100%);
-    mask: radial-gradient(ellipse 50% 50% at 50% 50%, #000 55%, transparent 100%);
+    -webkit-mask: radial-gradient(ellipse 90% 100% at 50% 0%, #000 72%, transparent 100%);
+    mask: radial-gradient(ellipse 90% 100% at 50% 0%, #000 72%, transparent 100%);
 
     img, picture { display: block; width: 100%; height: 100%; object-fit: cover; }
 

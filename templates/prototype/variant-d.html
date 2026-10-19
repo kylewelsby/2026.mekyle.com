@@ -1,16 +1,22 @@
 {#- PROTOTYPE variant D: portrait plates carrying the founder's letter. -#}
 <main id="main-d" class="d-page">
     <section class="d-hero">
-        <h1 class="d-hero__name"><img src="/prototype/brand/kyle-welsworth-white.svg" alt="Kyle Welsworth" width="704" height="102"></h1>
         <picture>
-            <source media="(max-width: 720px)" srcset="/prototype-media/kyle-curtain-arms-crossed-1200.webp">
-            <img class="d-hero__plate" src="/prototype-media/plate-curtain-pink-1680.webp" alt="" width="1680" height="944" fetchpriority="high" decoding="async">
+            <source media="(max-width: 720px)" srcset="/prototype-media/kyle-curtain-arms-crossed-tall-1200.webp">
+            <img class="d-hero__plate" src="/prototype-media/plate-curtain-pink-tall-1680.webp" alt="" width="1680" height="1144" fetchpriority="high" decoding="async">
         </picture>
+        <h1 class="d-hero__name">
+            <span class="d-sr">Kyle Welsworth</span>
+            <img class="d-hero__kyle" src="/prototype/brand/kyle-white.svg" alt="" width="361" height="200">
+            <img class="d-hero__welsworth" src="/prototype/brand/welsworth-white.svg" alt="" width="942" height="200">
+            <img class="d-hero__full" src="/prototype/brand/kyle-welsworth-white.svg" alt="" width="1356" height="200">
+        </h1>
         <img class="d-hero__logo" src="/prototype/brand/logo-lockup-white.svg" alt="ViaCara" width="1448" height="294">
         <img class="d-hero__cutout" src="/prototype-media/kyle-curtain-arms-crossed-cutout.webp" alt="Kyle, arms crossed and smiling, in front of a dusty-pink velvet curtain" width="1067" height="1600" decoding="async">
     </section>
 
     <section class="d-curtain">
+        <div class="d-curtain__blend" aria-hidden="true"></div>
         <article class="d-letter" aria-labelledby="d-hey">
             <header class="d-letterhead">
                 <div class="d-letterhead__from">
@@ -66,10 +72,10 @@
     <section id="d-ps" class="d-plate d-plate--engineer" aria-labelledby="d-ps-title">
         <figure class="d-plate__figure">
             <picture>
-                <source media="(max-width: 720px)" srcset="/prototype-media/kyle-laptop-curtain-1200.webp">
                 <img src="/prototype-media/plate-curtain-grey-laptop-1680.webp" alt="Kyle Welsworth in an armchair with a laptop on his knee beside a large plant" width="1680" height="944" loading="lazy" decoding="async">
             </picture>
         </figure>
+        <div class="d-floor">
         <div class="d-caption">
             <div class="d-caption__lead">
                 <h2 id="d-ps-title" class="d-caption__title">P.S. I'm also an engineer.</h2>
@@ -97,13 +103,13 @@
                 <a href="https://github.com/kylewelsby" rel="noopener" target="_blank">GitHub</a>
             </p>
         </div>
+        </div>
     </section>
 
     <section class="d-plate d-plate--off" aria-labelledby="d-off-title">
         <div class="d-off__scene" aria-hidden="true"></div>
         <figure class="d-off__figure">
             <picture>
-                <source media="(max-width: 720px)" srcset="/prototype-media/kyle-sofa-wide-1200.webp">
                 <img src="/prototype-media/plate-sofa-1680.webp" alt="Kyle Welsworth lounging on a dusty-pink sofa, seen from above" width="1680" height="944" loading="lazy" decoding="async">
             </picture>
         </figure>
