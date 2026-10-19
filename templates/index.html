@@ -2,8 +2,6 @@
 
 {% block og_type %}profile{% endblock og_type %}
 
-{% block html_attrs %} class="founder"{% endblock html_attrs %}
-
 {% block styles %}
 <link rel="stylesheet" href="/founder.css?v={{ now() | date(format='%s') }}">
 {% endblock styles %}
@@ -15,8 +13,8 @@
         <h1 class="f-hero__name">
             <span class="f-sr">Kyle Welsworth</span>
             <img class="f-hero__kyle" src="/brand/kyle-white.svg" alt="" width="361" height="200">
-            <img class="f-hero__welsworth" src="/brand/welsworth-white.svg" alt="" width="942" height="200">
-            <img class="f-hero__full" src="/brand/kyle-welsworth-white.svg" alt="" width="1356" height="200">
+            <img class="f-hero__welsworth" src="/brand/welsworth-white.svg?v=2" alt="" width="942" height="200">
+            <img class="f-hero__full" src="/brand/kyle-welsworth-white.svg?v=2" alt="" width="1356" height="200">
         </h1>
         <img class="f-hero__cutout" src="/media/kyle-curtain-arms-crossed-cutout.webp" srcset="/media/kyle-curtain-arms-crossed-cutout.webp 1067w, /media/kyle-curtain-arms-crossed-cutout-2400.webp 1601w" sizes="(max-width: 720px) 100vw, 37.5vw" alt="Kyle, arms crossed and smiling, in front of a dusty-pink curtain" width="1067" height="1600" fetchpriority="high" decoding="async">
     </section>
@@ -26,12 +24,12 @@
         <article class="f-letter" aria-labelledby="hey">
             <header class="f-letterhead">
                 <div class="f-letterhead__from">
-                    <p class="f-letterhead__name"><img src="/brand/kyle-welsworth-blue.svg" alt="Kyle Welsworth" width="704" height="102"></p>
+                    <p class="f-letterhead__name"><img src="/brand/kyle-welsworth-blue.svg?v=2" alt="Kyle Welsworth" width="704" height="102"></p>
                     <p class="f-letterhead__role">Founder of <a class="f-logo" href="https://viacara.com/" aria-label="ViaCara"><img src="/brand/logo-lockup-blue.svg" alt="" width="104" height="21"></a> · Manchester</p>
                 </div>
                 <nav class="f-letterhead__links" aria-label="Quick links">
                     <a class="f-pill f-pill--small" href="https://viacara.com/for/">Join ViaCara</a>
-                    <a class="f-quiet-link" href="#ps">Hiring? Read the P.S.</a>
+                    <a class="f-quiet-link" href="#engineering">Hiring? See my engineering work</a>
                 </nav>
             </header>
 
@@ -77,15 +75,15 @@
     </section>
     </div>
 
-    <section id="ps" class="f-plate f-plate--engineer" aria-labelledby="ps-title">
+    <section id="engineering" class="f-plate f-plate--engineer" aria-labelledby="engineering-title">
         <figure class="f-plate__figure">
             <img src="/media/plate-curtain-grey-laptop-1680.webp" srcset="/media/plate-curtain-grey-laptop-1680.webp 1680w, /media/plate-curtain-grey-laptop-3360.webp 3360w" sizes="(max-width: 720px) 223vw, 100vw" alt="Kyle Welsworth in an armchair with a laptop on his knee beside a large plant" width="1680" height="944" loading="lazy" decoding="async">
         </figure>
         <div class="f-floor">
         <div class="f-caption">
             <div class="f-caption__lead">
-                <h2 id="ps-title" class="f-caption__title">P.S. I'm also an engineer.</h2>
-                <p class="f-caption__text">Alongside ViaCara, I take on a small number of contract engagements in product software engineering, for AI systems and regulated platforms.</p>
+                <h2 id="engineering-title" class="f-caption__title">Hiring a product engineer?</h2>
+                <p class="f-caption__text">I've built software products since 1999, from GOV.UK services to an AI-first platform in 7 European markets. Today I'm building ViaCara, and alongside it I take on a small number of contract engagements, for AI systems and regulated platforms.</p>
                 <a class="f-pill" href="mailto:{{ config.extra.author_email }}">Email {{ config.extra.author_email }}</a>
                 <p class="f-caption__also">Also on <a href="{{ config.extra.linkedin }}" rel="noopener" target="_blank">LinkedIn</a> and <a href="{{ config.extra.github }}" rel="noopener" target="_blank">GitHub</a>.</p>
             </div>

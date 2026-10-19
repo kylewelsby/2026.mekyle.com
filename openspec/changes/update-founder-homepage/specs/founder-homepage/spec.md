@@ -7,11 +7,11 @@ The homepage SHALL present Kyle as the founder of ViaCara first, with his engine
 #### Scenario: Visitor lands on the homepage
 - **WHEN** a visitor opens https://mekyle.com/
 - **THEN** the first screen shows Kyle's name and his portrait on the linen curtain
-- **AND** the founder's letter starts within the first screen
+- **AND** the founder's letter overlaps the bottom of the hero
 
 #### Scenario: Hiring visitor looks for the record
-- **WHEN** a visitor selects "Hiring? Read the P.S."
-- **THEN** the page moves to the P.S. with the engineering record, two testimonials and the contact email
+- **WHEN** a visitor selects "Hiring? See my engineering work"
+- **THEN** the page moves to the engineering section with the engineering record, two testimonials and the contact email
 
 ### Requirement: Founder film
 
@@ -30,9 +30,13 @@ The letter SHALL offer the ViaCara founder film with captions, an AI illustratio
 
 The curtain SHALL run from the hero to the laptop photograph with no visible seam, kink or band, at 1x and 2x pixel density.
 
-#### Scenario: High-density screen
-- **WHEN** the page renders at a device pixel ratio of 2
+#### Scenario: High-density desktop screen
+- **WHEN** the page renders wider than 720 px at a device pixel ratio of 2
 - **THEN** the curtain tiles, photographs and floor haze load their 3360 px files
+
+#### Scenario: Phone screen
+- **WHEN** the page renders 720 px wide or less
+- **THEN** the backgrounds load the 1680 px files up to a device pixel ratio of 2 and the 3360 px files at 3
 
 #### Scenario: Curtain meets the photograph
 - **WHEN** the visitor scrolls to the end of the letter

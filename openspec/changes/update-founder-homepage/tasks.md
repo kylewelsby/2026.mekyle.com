@@ -18,5 +18,5 @@
 
 - [x] 3.1 Add `media-src` for `assets.viacara.com` to the CSP
 - [x] 3.2 Build with `zola build`
-- [ ] 3.3 Run Lighthouse on the Cloudflare Pages preview
+- [x] 3.3 Run Lighthouse on the Cloudflare Pages preview
 - [ ] 3.4 Kyle approves the pull request

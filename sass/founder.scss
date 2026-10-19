@@ -53,7 +53,8 @@ button { font: inherit; }
 h1, h2, p, figure, blockquote, ul { margin: 0; }
 h1, h2, p { color: inherit; font-size: inherit; font-weight: inherit; line-height: inherit; }
 a { color: $f-blue; text-decoration-thickness: 1.5px; text-underline-offset: 0.18em; }
-:focus-visible { outline: 3px solid #8E84C8; outline-offset: 3px; border-radius: 6px; }
+:focus-visible { outline: 3px solid $f-blue; outline-offset: 3px; border-radius: 6px; }
+[hidden] { display: none !important; }
 
 .skip-link {
     position: fixed;
@@ -251,14 +252,15 @@ a { color: $f-blue; text-decoration-thickness: 1.5px; text-underline-offset: 0.1
         mask: url("/brand/straightline-01.svg") center / 100% 100% no-repeat;
     }
 
+    &--ring { margin-inline: 0.95em 0.9em; }
+
     &--ring::after {
-        left: -0.55em;
-        right: -0.7em;
-        top: -0.6em;
-        bottom: -0.5em;
-        transform: rotate(6deg);
-        -webkit-mask: url("/brand/circle-14.svg") center / 100% 100% no-repeat;
-        mask: url("/brand/circle-14.svg") center / 100% 100% no-repeat;
+        left: -0.85em;
+        right: -0.8em;
+        top: -0.35em;
+        bottom: -0.45em;
+        -webkit-mask: url("/brand/circle-05-mirrored.svg") center / 100% 100% no-repeat;
+        mask: url("/brand/circle-05-mirrored.svg") center / 100% 100% no-repeat;
     }
 }
 

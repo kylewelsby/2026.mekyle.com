@@ -17,9 +17,9 @@ Questions about ViaCara go to hello@viacara.com. Kyle reads every message and an
 
 ## Engineering
 
-Alongside ViaCara, Kyle takes on a small number of contract engagements in product software engineering, for AI systems and regulated platforms. Contact: kyle.welsworth@pm.me.
+Kyle has built software products since 1999, from GOV.UK services to an AI-first platform in 7 European markets. Today he is building ViaCara, and alongside it he takes on a small number of contract engagements in product engineering, for AI systems and regulated platforms. Contact: kyle.welsworth@pm.me.
 
-His work spans fintech, regulated systems and AI-first platforms. He specialises in finding structural problems early: mapping hidden state complexity, advocating for architecture decisions that compound, and creating the clarity that lets teams move fast.
+His work spans fintech, regulated systems and AI-first platforms. He specialises in finding structural problems early: mapping hidden state complexity, advocating for architecture decisions that compound and creating the clarity that lets teams move fast.
 
 ## Impact Narratives
 

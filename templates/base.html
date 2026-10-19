@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"{% block html_attrs %}{% endblock html_attrs %}>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +26,7 @@
     <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock og_description %}">
     <meta property="og:type" content="{% block og_type %}website{% endblock og_type %}">
     <meta property="og:url" content="{% block og_url %}{{ config.base_url }}{% endblock og_url %}">
-    <meta property="og:image" content="{{ config.base_url }}/images/og-image.jpg">
+    <meta property="og:image" content="{{ config.base_url }}/images/og-image.jpg?v=2026-10-19-2">
     <meta property="og:locale" content="en_GB">
     <meta property="og:site_name" content="{{ config.extra.author }}">
 
@@ -36,7 +36,7 @@
     <meta name="twitter:creator" content="@halfcube">
     <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }}{% endblock twitter_title %}">
     <meta name="twitter:description" content="{% block twitter_description %}{{ config.description }}{% endblock twitter_description %}">
-    <meta name="twitter:image" content="{{ config.base_url }}/images/twitter-card.jpg">
+    <meta name="twitter:image" content="{{ config.base_url }}/images/twitter-card.jpg?v=2026-10-19-2">
 
     <!-- Structured Data: Person -->
     <script type="application/ld+json">

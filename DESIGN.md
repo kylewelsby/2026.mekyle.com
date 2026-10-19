@@ -9,7 +9,7 @@ The design came from a prototype round in October 2026. The prototype branch `fe
 1. **Hero.** Kyle's name as a large white wordmark. The cut-out portrait stands in front of the name. The pink linen curtain fills the background.
 2. **Letter.** A light card that overlaps the hero. It holds the founder's letter, the film, the join action and the transcript.
 3. **Curtain run.** The curtain continues behind the letter. It fades from pink to grey and then runs into the laptop photograph with no visible join.
-4. **P.S.** The laptop photograph, then the engineering record on a soft floor haze.
+4. **Engineering.** The laptop photograph, then "Hiring a product engineer?", the engineering record and two testimonials on a soft floor haze.
 5. **Outside of work.** The sofa photograph on a blurred copy of itself.
 6. **Footer.** Copyright, privacy, earlier sites and the photography credit.
 
@@ -34,6 +34,7 @@ The colour names and Urbanist come from the ViaCara brand. Use the ViaCara locku
 - Urbanist, self-hosted as two variable files (`static/fonts/`). Weights 300 to 700, roman and italic.
 - Body 1.1875rem with a line height of 1.6. The letter lead is 1.375rem.
 - The name in the hero is an SVG wordmark (`static/brand/`), so it does not wait for the font.
+- In the wordmark, the arm of the ribbon "r" runs level through the "t" stem and becomes its crossbar. The crossbar sits at the height of the arm, a little below the x-height. Keep this join in all three wordmark files. After an edit, change the `?v=` value on the wordmark images, because `/brand/*` is cached as immutable.
 - Inline links keep their underline. Colour alone does not separate them from body text (WCAG 1.4.1).
 
 ## Imagery
@@ -71,6 +72,7 @@ If you replace a tile, keep these rules:
 - The curtain backgrounds anchor at `center bottom` and repeat on the y axis. The bottom of the run must meet row 0 of the laptop photograph.
 - On screens up to 720 px wide, the backgrounds and photographs scale to 222.46% so that Kyle stays in frame. The photographs use a 4:5 crop.
 - The letter overlaps the hero by `clamp(6rem, 13vw, 12rem)` (4rem on phones).
+- The ring around "first two" is ViaCara's `circle-05`, mirrored, with its specks removed (`circle-05-mirrored.svg`). A pixel test against the Urbanist glyphs set its size: it keeps 0.07em clear of "first two" and stays clear of the lines above and below. Its side margins are wider than its overshoot, so it does not touch the words beside it. Measure again if the words or the type change.
 
 ## Motion
 
@@ -82,5 +84,9 @@ If you replace a tile, keep these rules:
 
 - The homepage loads `founder.css` only. The privacy page loads `style.css`.
 - The cut-out is the LCP image with `fetchpriority="high"`. Photographs below the fold load lazily.
-- Backgrounds use `image-set()` with 1x and 2x files. Images use `srcset` and `sizes`.
-- The film loads only when someone presses play (`preload="none"`). It comes from `assets.viacara.com`, which the CSP allows in `media-src`.
+- Backgrounds use `image-set()`: the 1680 file at 1x and the 3360 file at 2x. Phones up to 720 px wide take the 1680 file up to 2x and the 3360 file at 3x, because the backgrounds there are about 1735 device pixels wide at 2x. Images use `srcset` and `sizes`.
+- The film loads only when someone presses play (`preload="none"`). It comes from `assets.viacara.com`, which the CSP allows in `media-src`. The poster is a lazy `<img>`, not the `poster` attribute, so it does not compete with the hero.
+
+## Social cards
+
+`scripts/capture-social-images.sh` captures the hero at 1200x630 and 1200x600 into `static/images/`. Run it after a change to the hero. `/images/*` is cached as immutable, so change the `?v=` value on `og:image` and `twitter:image` in `templates/base.html` at the same time.

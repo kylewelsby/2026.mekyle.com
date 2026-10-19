@@ -13,7 +13,7 @@ A high-performance portfolio site for Staff/Principal Engineers that achieves 10
 
 ### Code Style
 - Use CSS custom properties for theming (Nord color palette)
-- System font stack for zero network requests
+- System font stack on the privacy page; the homepage self-hosts Urbanist (see `DESIGN.md`)
 - Inline critical CSS (<14KB compressed)
 - Minimize/eliminate JavaScript where possible
 

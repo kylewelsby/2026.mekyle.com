@@ -43,12 +43,12 @@ The site replaces the 2021 Gridsome version with a modern Zola-based static site
 ### Key Visual Elements
 1. **Linen curtain run**: one curtain, pink at the hero and grey at the laptop photograph, built from Fiona Finchett's photographs (see `DESIGN.md`)
 2. **Name wordmark** with a CSS scroll parallax, and the cut-out portrait in front of it
-3. **Minimal JavaScript**: only the film play button
+3. **Minimal JavaScript**: the film play button and the console greeting
 
 ## Content Structure
 
 ### Pages
-- **Homepage**: founder's letter with the ViaCara film, a P.S. with the engineering record, and "Outside of work"
+- **Homepage**: founder's letter with the ViaCara film, an engineering section ("Hiring a product engineer?") with the record and "Outside of work"
 - **Privacy**: privacy policy
 
 ### Required Files
