@@ -18,7 +18,7 @@
         {%- if hero != "name" %}
         <img class="d-hero__logo" src="/prototype/brand/logo-lockup-white.svg" alt="ViaCara" width="1448" height="294">
         {%- endif %}
-        <img class="d-hero__cutout" src="/prototype-media/kyle-curtain-arms-crossed-cutout.webp" alt="Kyle, arms crossed and smiling, in front of a dusty-pink {% if not linen %}velvet {% endif %}curtain" width="1067" height="1600"{% if linen %} fetchpriority="high"{% endif %} decoding="async">
+        <img class="d-hero__cutout" src="/prototype-media/kyle-curtain-arms-crossed-cutout.webp" srcset="/prototype-media/kyle-curtain-arms-crossed-cutout.webp 1067w, /prototype-media/kyle-curtain-arms-crossed-cutout-2400.webp 1601w" sizes="(max-width: 720px) 100vw, 37.5vw" alt="Kyle, arms crossed and smiling, in front of a dusty-pink {% if not linen %}velvet {% endif %}curtain" width="1067" height="1600"{% if linen %} fetchpriority="high"{% endif %} decoding="async">
     </section>
 
     <section class="d-curtain">
@@ -83,7 +83,7 @@
     <section id="{{ dp }}-ps" class="d-plate d-plate--engineer" aria-labelledby="{{ dp }}-ps-title">
         <figure class="d-plate__figure">
             <picture>
-                <img src="/prototype-media/plate-curtain-{% if curtain == "linen-pink" %}pink{% else %}grey{% endif %}-laptop-1680.webp" alt="Kyle Welsworth in an armchair with a laptop on his knee beside a large plant" width="1680" height="944" loading="lazy" decoding="async">
+                {% if curtain == "linen-pink" %}<img src="/prototype-media/plate-curtain-pink-laptop-1680.webp"{% else %}<img src="/prototype-media/plate-curtain-grey-laptop-1680.webp" srcset="/prototype-media/plate-curtain-grey-laptop-1680.webp 1680w, /prototype-media/plate-curtain-grey-laptop-3360.webp 3360w" sizes="(max-width: 720px) 223vw, 100vw"{% endif %} alt="Kyle Welsworth in an armchair with a laptop on his knee beside a large plant" width="1680" height="944" loading="lazy" decoding="async">
             </picture>
         </figure>
         <div class="d-floor">
@@ -118,7 +118,7 @@
         <div class="d-off__scene" aria-hidden="true"></div>
         <figure class="d-off__figure">
             <picture>
-                <img src="/prototype-media/plate-sofa-1680.webp" alt="Kyle Welsworth lounging on a dusty-pink sofa, seen from above" width="1680" height="944" loading="lazy" decoding="async">
+                <img src="/prototype-media/plate-sofa-1680.webp" srcset="/prototype-media/plate-sofa-1680.webp 1680w, /prototype-media/plate-sofa-3360.webp 3360w" sizes="(max-width: 720px) 223vw, 100vw" alt="Kyle Welsworth lounging on a dusty-pink sofa, seen from above" width="1680" height="944" loading="lazy" decoding="async">
             </picture>
         </figure>
         <div class="d-caption d-caption--off">

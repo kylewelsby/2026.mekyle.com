@@ -6,9 +6,13 @@
   "curtain-tile-1680.webp": "plate-curtain-pink with Kyle removed (flux-pro-1.0-fill), stacked with its vertical mirror",
   "curtain-blend-1680.webp": "flux-pro-1.0-expand grew the grey linen curtain of plate-curtain-grey-laptop upward; the linen was dyed to the pink velvet palette by brightness, and the velvet folds were warped into the linen folds row by row (DTW on fold profiles). Last row is row 0 of plate-curtain-grey-laptop",
   "floor-blend-1680.webp": "flux-kontext-pro defocus haze over a mirrored floor composite; ends match the last row of plate-curtain-grey-laptop and row 0 of plate-sofa",
-  "linen-grey-tile-1680.webp": "flux-pro-1.0-expand grew the grey linen of plate-curtain-grey-laptop upward; stacked with its vertical mirror. Bottom row continues row 0 of plate-curtain-grey-laptop",
-  "linen-pink-tile-1680.webp": "linen-grey-tile dyed to the pink velvet palette by brightness; bottom rows crossfade into row 0 of plate-curtain-pink-laptop",
   "plate-curtain-pink-laptop-1680.webp": "plate-curtain-grey-laptop with only the curtain dyed pink; flux-kontext-pro marked where the curtain is, the colour comes from the same brightness dye on the original pixels",
   "floor-blend-pink-1680.webp": "floor-blend-1680 with the curtain reflection tinted to match plate-curtain-pink-laptop",
-  "floor-top-1680.webp / floor-mid-1680.webp / floor-bottom-1680.webp": "slices of floor-blend-1680 so the haze can stretch without stretching the busy top band"
+  "floor-top-1680.webp / floor-mid-1680.webp / floor-bottom-1680.webp": "slices of floor-blend-1680 so the haze can stretch without stretching the busy top band",
+  "linen-grey-tile-1680.webp / linen-grey-tile-3360.webp": "Periodic tile, 562 rows at 2x. Rows: the clean top 180 rows of plate-curtain-grey-laptop, then back up through flux-pro-1.0-fill rows that grow the same curtain upward (guidance 30, texture prompt), then down again into row 0 of the photo. No seam cuts or warps; each turn row eases the fold slant over 96 rows. Fill rows matched to the photo's column brightness. Bottom row continues row 0 of plate-curtain-grey-laptop",
+  "linen-pink-tile-1680.webp / linen-pink-tile-3360.webp": "linen-grey-tile dyed to the pink velvet palette by brightness, after a wide brightness flatten; same fold positions as the grey tile",
+  "plate-curtain-grey-laptop-1680.webp / plate-curtain-grey-laptop-3360.webp": "Fiona Finchett's photograph at 2x from the 3000 px original; flux-pro-1.0-expand side margins. Top 80 rows brightness-matched to the tile join; one thread speck cloned out at row 55",
+  "plate-sofa-1680.webp / plate-sofa-3360.webp": "Fiona Finchett's photograph at 2x from the 3000 px original; flux-pro-1.0-expand side margins",
+  "kyle-curtain-arms-crossed-cutout-2400.webp": "Cut-out of Fiona Finchett's hero photograph at 1601x2400",
+  "floor-top-3360.webp / floor-mid-3360.webp / floor-bottom-3360.webp": "2x slices of the floor haze between the laptop and sofa photographs"
 }
