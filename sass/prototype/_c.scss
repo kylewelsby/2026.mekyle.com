@@ -87,7 +87,7 @@ html[data-pv="C"] {
             width: min(100%, calc((100svh - 4.5rem - 13rem) * 1680 / 944 + 14px));
             margin-inline: auto;
 
-            picture, img { height: auto; aspect-ratio: 1680 / 944; }
+            picture, picture img { height: auto; aspect-ratio: 1680 / 944; }
         }
     }
 

@@ -115,6 +115,7 @@ html[data-pv="B"] {
     &__from { display: grid; gap: 0.1rem; margin-right: auto !important; }
     &__name { color: $b-blue; font-size: 1.125rem; font-weight: 700; }
     &__role { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.35rem; color: $b-blue; font-size: 0.9375rem; }
+    &__role .b-logo { margin-inline: 0.6rem; }
     &__role .b-logo img { width: 5.5rem; }
     &__links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.25rem; font-size: 0.9375rem; }
 }
