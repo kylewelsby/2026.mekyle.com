@@ -43,7 +43,7 @@ His work spans fintech, regulated systems and AI-first platforms. He specialises
 
 **What Kyle did:** Led technical delivery for a team of 6. Owned scope and sequencing for shipping platform optimisations. Used data to reframe the approach when unforeseen production constraints emerged. Kept team morale up through project uncertainty.
 
-**Outcome:** About 2% faster checkout at scale. Delivered quality work although the project was eventually stopped for external reasons.
+**Outcome:** About 2% better checkout conversion at scale. Delivered quality work although the project was eventually stopped for external reasons.
 
 **Technologies:** Ruby on Rails, GraphQL, Distributed Systems
 
