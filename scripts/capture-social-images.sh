@@ -1,19 +1,20 @@
 #!/usr/bin/env bash
-# Captures the homepage hero as the Open Graph and Twitter cards.
-# Run `mise exec -- zola serve` first. Usage: scripts/capture-social-images.sh [url]
+# Renders scripts/social-card/card.html as the Open Graph and Twitter cards.
+# Usage: scripts/capture-social-images.sh
 set -euo pipefail
 
-url="${1:-http://127.0.0.1:1111/}"
+root="$(cd "$(dirname "$0")/.." && pwd)"
+card="file://$root/scripts/social-card/card.html"
 chrome="${CHROME:-/Applications/Google Chrome.app/Contents/MacOS/Google Chrome}"
-out="$(cd "$(dirname "$0")/.." && pwd)/static/images"
+out="$root/static/images"
 tmp="$(mktemp -d)"
 trap 'rm -rf "$tmp"' EXIT
 
-for card in "og-image 1200 630" "twitter-card 1200 600"; do
-    read -r name width height <<<"$card"
+for spec in "og-image 630" "twitter-card 600"; do
+    read -r name height <<<"$spec"
     "$chrome" --headless=new --disable-gpu --hide-scrollbars --force-device-scale-factor=1 \
-        --virtual-time-budget=4000 --window-size="$width,$height" \
-        --screenshot="$tmp/$name.png" "$url" >/dev/null 2>&1
-    sips -s format jpeg -s formatOptions 88 "$tmp/$name.png" --out "$out/$name.jpg" >/dev/null
-    echo "$out/$name.jpg"
+        --allow-file-access-from-files --virtual-time-budget=4000 --window-size="1200,$height" \
+        --screenshot="$tmp/$name.png" "$card?h=$height" >/dev/null 2>&1
+    sips -s format jpeg -s formatOptions 90 "$tmp/$name.png" --out "$out/$name.jpg" >/dev/null
+    echo "$out/$name.jpg $(sips -g pixelWidth -g pixelHeight "$out/$name.jpg" | awk '/pixel/ {printf "%s ", $2}')"
 done

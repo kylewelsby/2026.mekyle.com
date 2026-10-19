@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Social card</title>
+<style>
+@font-face {
+    font-family: Urbanist;
+    src: url("../../static/fonts/urbanist-var.woff2") format("woff2");
+    font-weight: 300 700;
+}
+
+:root {
+    --blue: #26365A;
+    --sky: #EFF7FA;
+    --storm: #5E5E66;
+    --overcast: #D5D5D5;
+    --twilight: #7985FF;
+}
+
+html, body { margin: 0; background: #000; }
+
+.card {
+    position: relative;
+    width: 1200px;
+    height: var(--h, 630px);
+    overflow: hidden;
+    background: url("../../static/media/linen-pink-tile-3360.webp") center bottom / 1200px auto repeat-y;
+    font-family: Urbanist, sans-serif;
+    color: var(--blue);
+}
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: radial-gradient(ellipse 820px 440px at 0 0, rgba(46, 16, 30, 0.3) 0%, rgba(46, 16, 30, 0.16) 50%, rgba(46, 16, 30, 0) 100%);
+}
+
+.name {
+    position: absolute;
+    z-index: 1;
+    left: 64px;
+    top: 46px;
+    width: 600px;
+    line-height: 0;
+    filter: drop-shadow(0 5px 22px rgba(88, 36, 52, 0.32));
+}
+.name img { position: absolute; left: 0; height: auto; }
+.name .kyle { top: 0; width: 230.6px; }
+.name .welsworth { top: 118px; width: 600px; }
+
+.cutout {
+    position: absolute;
+    z-index: 2;
+    left: 628px;
+    top: -70px;
+    width: 620px;
+    height: auto;
+    filter: drop-shadow(0 14px 30px rgba(82, 36, 48, 0.24));
+}
+
+.sheet {
+    position: absolute;
+    z-index: 3;
+    left: 64px;
+    bottom: var(--sheet-bottom, 54px);
+    width: 596px;
+    box-sizing: border-box;
+    padding: 28px 34px 26px;
+    background: var(--sky);
+    border-radius: 16px;
+    box-shadow: 0 18px 44px rgba(82, 36, 48, 0.26);
+    white-space: nowrap;
+}
+
+.founder {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-bottom: 20px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid var(--overcast);
+    font-size: 34px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+.founder img { height: 42px; width: auto; transform: translateY(2px); }
+
+.foot { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; }
+.trade { margin: 0; font-size: 26px; color: var(--storm); letter-spacing: -0.005em; }
+
+.url { position: relative; font-size: 28px; font-weight: 650; letter-spacing: -0.01em; }
+.url::after {
+    content: "";
+    position: absolute;
+    left: -4px;
+    right: -6px;
+    bottom: -9px;
+    height: 10px;
+    background: var(--twilight);
+    -webkit-mask: url("../../static/brand/straightline-01.svg") center / 100% 100% no-repeat;
+    mask: url("../../static/brand/straightline-01.svg") center / 100% 100% no-repeat;
+}
+</style>
+</head>
+<body>
+<div class="card" id="card">
+    <div class="name">
+        <img class="kyle" src="../../static/brand/kyle-white.svg" alt="">
+        <img class="welsworth" src="../../static/brand/welsworth-white.svg" alt="">
+    </div>
+    <img class="cutout" src="../../static/media/kyle-curtain-arms-crossed-cutout-2400.webp" alt="">
+    <div class="sheet">
+        <div class="founder">Founder of <img src="../../static/brand/logo-lockup-blue.svg" alt="ViaCara"></div>
+        <div class="foot">
+            <p class="trade">Software engineer since 1999</p>
+            <span class="url">mekyle.com</span>
+        </div>
+    </div>
+</div>
+<script>
+const height = new URLSearchParams(location.search).get("h") || "630";
+const card = document.getElementById("card");
+card.style.setProperty("--h", height + "px");
+if (height === "600") card.style.setProperty("--sheet-bottom", "68px");
+</script>
+</body>
+</html>
