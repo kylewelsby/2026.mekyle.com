@@ -9,11 +9,19 @@
 
 {% block body %}
 <div class="pv-pane pv-d" data-variant="D" data-variant-name="Plates and letter">
-    {%- set dp = "d" %}{% set hero = "logo" %}
+    {%- set dp = "d" %}{% set hero = "logo" %}{% set curtain = "velvet" %}
     {% include "prototype/variant-d.html" %}
 </div>
 <div class="pv-pane pv-d" data-variant="E" data-variant-name="Name only" hidden>
-    {%- set dp = "e" %}{% set hero = "name" %}
+    {%- set dp = "e" %}{% set hero = "name" %}{% set curtain = "velvet" %}
+    {% include "prototype/variant-d.html" %}
+</div>
+<div class="pv-pane pv-d" data-variant="F" data-variant-name="Full curtain, pink to grey" hidden>
+    {%- set dp = "f" %}{% set hero = "name" %}{% set curtain = "linen-grey" %}
+    {% include "prototype/variant-d.html" %}
+</div>
+<div class="pv-pane pv-d" data-variant="G" data-variant-name="Full curtain, pink" hidden>
+    {%- set dp = "g" %}{% set hero = "name" %}{% set curtain = "linen-pink" %}
     {% include "prototype/variant-d.html" %}
 </div>
 <div class="pv-pane pv-a" data-variant="A" data-variant-name="Decision record" hidden>

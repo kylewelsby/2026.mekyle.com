@@ -13,7 +13,7 @@ $d-storm: #5E5E66;
 $d-overcast: #D5D5D5;
 $d-font: "Urbanist", system-ui, sans-serif;
 
-html[data-pv="D"], html[data-pv="E"] {
+html[data-pv="D"], html[data-pv="E"], html[data-pv="F"], html[data-pv="G"] {
     background: $d-lilac;
     body { background: $d-lilac; }
     ::selection { background: $d-blue; color: $d-sheet; }
@@ -118,6 +118,50 @@ html[data-pv="D"], html[data-pv="E"] {
             height: calc(100% * 1200 / 1502);
         }
     }
+
+    @supports (animation-timeline: scroll()) {
+        @media (prefers-reduced-motion: no-preference) {
+            .d-hero__name img {
+                animation: d-name-drift linear both;
+                animation-timeline: scroll(root);
+                animation-range: 0 100vh;
+            }
+        }
+    }
+}
+
+@keyframes d-name-drift {
+    to { transform: translateY(26vh); }
+}
+
+.d-page--linen-grey, .d-page--linen-pink {
+    .d-run { background: url("/prototype-media/linen-pink-tile-1680.webp") center bottom / 100% auto repeat-y; }
+    .d-hero, .d-curtain { background: none; }
+
+    .d-hero__cutout {
+        filter: drop-shadow(0 1.2vw 2.6vw rgba(82, 36, 48, 0.22));
+        -webkit-mask: linear-gradient(#000 71%, transparent);
+        mask: linear-gradient(#000 71%, transparent);
+    }
+
+    @media (max-width: 720px) {
+        .d-run { background-size: 222.46% auto; }
+        .d-hero__cutout {
+            -webkit-mask: linear-gradient(#000 82.5%, transparent);
+            mask: linear-gradient(#000 82.5%, transparent);
+        }
+    }
+}
+
+.d-curtain__grey {
+    position: absolute;
+    inset: 0;
+    background: url("/prototype-media/linen-grey-tile-1680.webp") center bottom / 100% auto repeat-y;
+    -webkit-mask: linear-gradient(transparent 8%, rgba(0, 0, 0, 0.14) 32%, rgba(0, 0, 0, 0.45) 58%, rgba(0, 0, 0, 0.82) 82%, #000 97%);
+    mask: linear-gradient(transparent 8%, rgba(0, 0, 0, 0.14) 32%, rgba(0, 0, 0, 0.45) 58%, rgba(0, 0, 0, 0.82) 82%, #000 97%);
+    pointer-events: none;
+
+    @media (max-width: 720px) { background-size: 222.46% auto; }
 }
 
 @keyframes d-rise {
@@ -229,10 +273,11 @@ html[data-pv="D"], html[data-pv="E"] {
     }
 
     &--ring::after {
-        left: -0.35em;
-        right: -0.35em;
-        top: -0.45em;
-        bottom: -0.4em;
+        left: -0.55em;
+        right: -0.7em;
+        top: -0.6em;
+        bottom: -0.5em;
+        transform: rotate(6deg);
         -webkit-mask: url("/prototype/brand/circle-14.svg") center / 100% 100% no-repeat;
         mask: url("/prototype/brand/circle-14.svg") center / 100% 100% no-repeat;
     }
@@ -338,7 +383,12 @@ html[data-pv="D"], html[data-pv="E"] {
     position: relative;
     isolation: isolate;
     margin-top: -1px;
-    background: url("/prototype-media/floor-blend-1680.webp") center / 100% 100% no-repeat;
+    background:
+        url("/prototype-media/floor-top-1680.webp") center top / 100% auto no-repeat,
+        url("/prototype-media/floor-bottom-1680.webp") center bottom / 100% auto no-repeat,
+        url("/prototype-media/floor-mid-1680.webp") center / 100% 100% no-repeat;
+
+    .d-caption { padding-top: calc(100vw * 165 / 1680 + 1.5rem); }
 
     &::before {
         content: "";
@@ -349,8 +399,14 @@ html[data-pv="D"], html[data-pv="E"] {
         pointer-events: none;
     }
 
-    @media (max-width: 720px) { background-size: 222.46% 100%; }
+    @media (max-width: 720px) {
+        background-size: 222.46% auto, 222.46% auto, 222.46% 100%;
+
+        .d-caption { padding-top: calc(100vw * 2.2246 * 130 / 1680 + 1rem); }
+    }
 }
+
+.d-page--linen-pink .d-floor { background-image: url("/prototype-media/floor-top-pink-1680.webp"), url("/prototype-media/floor-bottom-1680.webp"), url("/prototype-media/floor-mid-1680.webp"); }
 
 .d-caption {
     display: grid;
@@ -371,8 +427,8 @@ html[data-pv="D"], html[data-pv="E"] {
     }
 
     &__text { max-width: 44ch; font-size: 1.125rem !important; }
-    &__links { grid-column: 1 / -1; display: flex; gap: 1.5rem; font-weight: 700; }
-    &__links a { color: $d-navy; }
+    &__also { font-size: 1rem !important; }
+    &__also a { color: $d-navy; font-weight: 700; }
 
     @media (max-width: 900px) { grid-template-columns: minmax(0, 1fr); }
 }
@@ -469,7 +525,10 @@ html[data-pv="D"], html[data-pv="E"] {
     color: $d-navy;
     font-family: $d-font;
     font-size: 0.875rem;
+    font-weight: 500;
     text-align: center;
 
-    a { color: $d-navy; }
+    a { color: $d-navy; font-weight: 600; }
 }
+
+.d-foot .d-foot__credit { margin-top: 0.35rem; font-size: 0.75rem; }

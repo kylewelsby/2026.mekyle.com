@@ -5,5 +5,10 @@
   "kyle-curtain-arms-crossed-tall-1200.webp": "flux-pro-1.0-expand, top +302 rows",
   "curtain-tile-1680.webp": "plate-curtain-pink with Kyle removed (flux-pro-1.0-fill), stacked with its vertical mirror",
   "curtain-blend-1680.webp": "flux-pro-1.0-expand grew the grey linen curtain of plate-curtain-grey-laptop upward; the linen was dyed to the pink velvet palette by brightness, and the velvet folds were warped into the linen folds row by row (DTW on fold profiles). Last row is row 0 of plate-curtain-grey-laptop",
-  "floor-blend-1680.webp": "flux-kontext-pro defocus haze over a mirrored floor composite; ends match the last row of plate-curtain-grey-laptop and row 0 of plate-sofa"
+  "floor-blend-1680.webp": "flux-kontext-pro defocus haze over a mirrored floor composite; ends match the last row of plate-curtain-grey-laptop and row 0 of plate-sofa",
+  "linen-grey-tile-1680.webp": "flux-pro-1.0-expand grew the grey linen of plate-curtain-grey-laptop upward; stacked with its vertical mirror. Bottom row continues row 0 of plate-curtain-grey-laptop",
+  "linen-pink-tile-1680.webp": "linen-grey-tile dyed to the pink velvet palette by brightness; bottom rows crossfade into row 0 of plate-curtain-pink-laptop",
+  "plate-curtain-pink-laptop-1680.webp": "plate-curtain-grey-laptop with only the curtain dyed pink; flux-kontext-pro marked where the curtain is, the colour comes from the same brightness dye on the original pixels",
+  "floor-blend-pink-1680.webp": "floor-blend-1680 with the curtain reflection tinted to match plate-curtain-pink-laptop",
+  "floor-top-1680.webp / floor-mid-1680.webp / floor-bottom-1680.webp": "slices of floor-blend-1680 so the haze can stretch without stretching the busy top band"
 }
