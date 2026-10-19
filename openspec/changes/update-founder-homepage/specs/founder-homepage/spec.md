@@ -10,8 +10,12 @@ The homepage SHALL present Kyle as the founder of ViaCara first, with his engine
 - **AND** the founder's letter overlaps the bottom of the hero
 
 #### Scenario: Hiring visitor looks for the record
-- **WHEN** a visitor selects "Hiring? See my engineering work"
-- **THEN** the page moves to the engineering section with the engineering record, two testimonials and the contact email
+- **WHEN** a visitor reads past the letter
+- **THEN** the engineering section "Hiring a product engineer?" shows the engineering record, two testimonials and the contact email
+
+#### Scenario: Phone visitor sees the buttons
+- **WHEN** the page renders 360 px wide or more
+- **THEN** every button label stays on one line
 
 ### Requirement: Founder film
 

@@ -71,7 +71,9 @@ If you replace a tile, keep these rules:
 
 - The curtain backgrounds anchor at `center bottom` and repeat on the y axis. The bottom of the run must meet row 0 of the laptop photograph.
 - On screens up to 720 px wide, the backgrounds and photographs scale to 222.46% so that Kyle stays in frame. The photographs use a 4:5 crop.
-- The letter overlaps the hero by `clamp(6rem, 13vw, 12rem)` (4rem on phones).
+- The letter overlaps the hero by `clamp(6rem, 13vw, 12rem)` (4rem on phones). The cut-out stays solid down to the top of the letter; its fade sits inside the overlap, so the body never fades over the curtain.
+- Buttons never wrap. `.f-pill` uses `white-space: nowrap`, and a label stays short enough to fit a 360 px phone ("Join ViaCara", "Email kyle.welsworth@pm.me").
+- The letterhead holds the name and role only. The engineering section follows the letter, so it needs no jump link. The letter names `hello@viacara.com` for ViaCara questions; the engineering section names Kyle's own email.
 - The ring around "first two" is ViaCara's `circle-05`, mirrored, with its specks removed (`circle-05-mirrored.svg`). A pixel test against the Urbanist glyphs set its size: it keeps 0.07em clear of "first two" and stays clear of the lines above and below. Its side margins are wider than its overshoot, so it does not touch the words beside it. Measure again if the words or the type change.
 
 ## Motion
