@@ -91,4 +91,10 @@ If you replace a tile, keep these rules:
 
 ## Social cards
 
-`scripts/capture-social-images.sh` captures the hero at 1200x630 and 1200x600 into `static/images/`. Run it after a change to the hero. `/images/*` is cached as immutable, so change the `?v=` value on `og:image` and `twitter:image` in `templates/base.html` at the same time.
+`scripts/social-card/card.html` is the template for the Open Graph card (1200x630) and the Twitter card (1200x600). `scripts/capture-social-images.sh` renders it with Chrome into `static/images/`. The template uses the site's own files: the pink linen tile, the cut-out, the split white wordmark, the ViaCara lockup and the hand-drawn underline.
+
+- **Layout:** the name in two lines at the top left, the cut-out at the right with the face at thumbnail size, and a sky letterhead at the bottom left. The letterhead reads "Founder of ViaCara", then "Software engineer since 1999" and `mekyle.com`.
+- **Small sizes:** a feed shows the card at about 550 px wide. Keep the name and the letterhead text at their sizes, and test a change at that width.
+- **X label:** X puts the domain over the bottom-left corner of the image. On the 600 px card, the letterhead sits 68 px from the bottom so that the label does not cover it.
+- **ViaCara lockup:** it stays blue on the sky letterhead, with clear space on each side. Do not recolour it for the curtain.
+- **Cache:** `/images/*` is cached as immutable. Change the `?v=` value on `og:image` and `twitter:image` in `templates/base.html` when you render new cards.
