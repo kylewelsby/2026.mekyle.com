@@ -11,5 +11,5 @@
 
 ## 3. Release
 
-- [ ] 3.1 Kyle approves the card
-- [ ] 3.2 Re-scrape the card in LinkedIn Post Inspector after deploy
+- [x] 3.1 Kyle approves the card
+- [ ] 3.2 Re-scrape the card in LinkedIn Post Inspector after deploy (waits on a LinkedIn sign-in in the T3 browser)
