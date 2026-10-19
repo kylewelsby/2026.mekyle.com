@@ -84,7 +84,10 @@ a { color: $f-blue; text-decoration-thickness: 1.5px; text-underline-offset: 0.1
     background: url("/media/linen-pink-tile-1680.webp") center bottom / 100% auto repeat-y;
     background-image: image-set(url("/media/linen-pink-tile-1680.webp") 1x, url("/media/linen-pink-tile-3360.webp") 2x);
 
-    @media (max-width: 720px) { background-size: 222.46% auto; }
+    @media (max-width: 720px) {
+        background-size: 222.46% auto;
+        background-image: image-set(url("/media/linen-pink-tile-1680.webp") 2x, url("/media/linen-pink-tile-3360.webp") 3x);
+    }
 }
 
 .f-hero {
@@ -178,7 +181,10 @@ a { color: $f-blue; text-decoration-thickness: 1.5px; text-underline-offset: 0.1
         mask: linear-gradient(transparent 8%, rgba(0, 0, 0, 0.14) 32%, rgba(0, 0, 0, 0.45) 58%, rgba(0, 0, 0, 0.82) 82%, #000 97%);
         pointer-events: none;
 
-        @media (max-width: 720px) { background-size: 222.46% auto; }
+        @media (max-width: 720px) {
+            background-size: 222.46% auto;
+            background-image: image-set(url("/media/linen-grey-tile-1680.webp") 2x, url("/media/linen-grey-tile-3360.webp") 3x);
+        }
     }
 }
 
@@ -269,7 +275,8 @@ a { color: $f-blue; text-decoration-thickness: 1.5px; text-underline-offset: 0.1
     margin: 0 0 2rem;
 
     &__frame { position: relative; overflow: hidden; aspect-ratio: 16 / 9; border-radius: 12px; background: #1E1E1E; }
-    video { width: 100%; height: 100%; object-fit: cover; }
+    video, &__poster { width: 100%; height: 100%; object-fit: cover; }
+    &__poster { position: absolute; inset: 0; }
 
     &__play {
         position: absolute;
@@ -372,6 +379,10 @@ a { color: $f-blue; text-decoration-thickness: 1.5px; text-underline-offset: 0.1
 
     @media (max-width: 720px) {
         background-size: 222.46% auto, 222.46% auto, 222.46% 100%;
+        background-image:
+            image-set(url("/media/floor-top-1680.webp") 2x, url("/media/floor-top-3360.webp") 3x),
+            image-set(url("/media/floor-bottom-1680.webp") 2x, url("/media/floor-bottom-3360.webp") 3x),
+            image-set(url("/media/floor-mid-1680.webp") 2x, url("/media/floor-mid-3360.webp") 3x);
 
         .f-caption { padding-top: calc(100vw * 2.2246 * 130 / 1680 + 1rem); }
     }
