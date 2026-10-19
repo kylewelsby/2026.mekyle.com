@@ -29,6 +29,13 @@ html, body { margin: 0; background: #000; }
     font-family: Urbanist, sans-serif;
     color: var(--blue);
 }
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: radial-gradient(ellipse 520px 250px at 330px 150px, rgba(46, 16, 30, 0.56) 0%, rgba(46, 16, 30, 0.36) 50%, rgba(46, 16, 30, 0) 100%);
+}
 
 .name {
     position: absolute;

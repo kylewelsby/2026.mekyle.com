@@ -94,6 +94,7 @@ If you replace a tile, keep these rules:
 `scripts/social-card/card.html` is the template for the Open Graph card (1200x630) and the Twitter card (1200x600). `scripts/capture-social-images.sh` renders it with Chrome into `static/images/`. The template uses the site's own files: the pink linen tile, the cut-out, the split white wordmark, the ViaCara lockup and the hand-drawn underline.
 
 - **Layout:** the name in two lines at the top left, the cut-out at the right with the face at thumbnail size, and a sky letterhead at the bottom left. The letterhead reads "Founder of ViaCara", then "Software engineer since 1999" and `mekyle.com`.
+- **Name contrast:** a soft plum ellipse (`rgba(46, 16, 30, 0.56)` at the centre) sits behind the white name. The curtain folds are bright, so the name needs it. The ellipse stays below the cut-out and the letterhead.
 - **Small sizes:** a feed shows the card at about 550 px wide. Keep the name and the letterhead text at their sizes, and test a change at that width.
 - **X label:** X puts the domain over the bottom-left corner of the image. On the 600 px card, the letterhead sits 68 px from the bottom so that the label does not cover it.
 - **ViaCara lockup:** it stays blue on the sky letterhead, with clear space on each side. Do not recolour it for the curtain.
