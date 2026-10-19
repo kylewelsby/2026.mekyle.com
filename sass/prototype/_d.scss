@@ -8,7 +8,6 @@ $d-sky: #EFF7FA;
 $d-sheet: #F9F9F9;
 $d-dusk: #DAD0FF;
 $d-twilight: #7985FF;
-$d-coral: #D9654F;
 $d-ink: #2B2B2B;
 $d-storm: #5E5E66;
 $d-overcast: #D5D5D5;
@@ -68,11 +67,31 @@ html[data-pv="D"] {
         object-position: 50% 0;
     }
 
-    @media (max-width: 720px) {
-        aspect-ratio: 2 / 3;
+    &__name {
+        position: absolute;
+        z-index: 1;
+        left: 15%;
+        top: 18.9%;
+        width: 27%;
+        margin: 0;
+        line-height: 0;
+        transform: translateY(-50%);
+        animation: d-rise-name 1200ms cubic-bezier(0.16, 1, 0.3, 1) both;
 
-        &__logo { top: 8%; width: 78%; }
-        &__cutout { left: 0; width: 100%; }
+        img { display: block; width: 100%; height: auto; }
+    }
+
+    @media (max-width: 720px) {
+        aspect-ratio: 6 / 11;
+
+        picture { inset: auto 0 0; aspect-ratio: 2 / 3; }
+        &__plate {
+            -webkit-mask: linear-gradient(to bottom, transparent, #000 22%, #000 86%, transparent);
+            mask: linear-gradient(to bottom, transparent, #000 22%, #000 86%, transparent);
+        }
+        &__name { left: 8%; top: 7.2%; width: 70%; }
+        &__logo { top: 18.6%; width: 84%; }
+        &__cutout { display: none; }
     }
 }
 
@@ -81,21 +100,17 @@ html[data-pv="D"] {
     to { transform: translate(-50%, -50%); opacity: 1; }
 }
 
+@keyframes d-rise-name {
+    from { transform: translateY(-20%); opacity: 0; }
+    to { transform: translateY(-50%); opacity: 1; }
+}
+
 .d-curtain {
     display: flow-root;
     position: relative;
     margin-top: -1px;
     padding: 0 clamp(1rem, 4vw, 3rem) clamp(4rem, 8vw, 7rem);
     background: url("/prototype-media/curtain-strip.webp") center top / 100% 8px repeat-y;
-}
-
-.d-curtain::after {
-    content: "";
-    position: absolute;
-    inset: auto 0 0;
-    height: clamp(8rem, 16vw, 16rem);
-    background: linear-gradient(rgba($d-grey, 0), $d-grey);
-    pointer-events: none;
 }
 
 .d-letter {
@@ -121,7 +136,8 @@ html[data-pv="D"] {
     border-bottom: 1px solid $d-overcast;
 
     &__from { display: grid; gap: 0.15rem; margin-right: auto; }
-    &__name { color: $d-blue !important; font-size: 1.125rem !important; font-weight: 700 !important; }
+    &__name { line-height: 0 !important; }
+    &__name img { display: block; width: 10.5rem; height: auto; }
     &__role { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.35rem; color: $d-blue; font-size: 0.9375rem !important; }
     &__links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.25rem; font-size: 0.9375rem; }
 }
@@ -260,14 +276,32 @@ html[data-pv="D"] {
         img, picture { display: block; width: 100%; height: 100%; object-fit: cover; }
     }
 
-    &--engineer { background: $d-grey; }
+    &--engineer {
+        isolation: isolate;
+        background: $d-grey;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: -2px 0 auto;
+            aspect-ratio: 1680 / 944;
+            background: url("/prototype-media/curtain-strip.webp") center top / 100% 8px repeat-y;
+            -webkit-mask: linear-gradient(#000 45%, transparent 70%);
+            mask: linear-gradient(#000 45%, transparent 70%);
+            pointer-events: none;
+        }
+    }
+
+    &--engineer &__figure { position: relative; z-index: 1; }
+
     &--engineer &__figure img {
-        -webkit-mask: linear-gradient(to bottom, transparent, #000 24%, #000 88%, transparent);
-        mask: linear-gradient(to bottom, transparent, #000 24%, #000 88%, transparent);
+        $wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cfilter id='b' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeGaussianBlur stdDeviation='3'/%3E%3C/filter%3E%3Cpath filter='url(%23b)' d='M-10 44C6 42 18 32 28 22S42 9 58 7S92 7 110 7L110 86C95 86 75 90 58 92S20 94-10 97Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+        -webkit-mask: $wave;
+        mask: $wave;
     }
 
     @media (max-width: 720px) {
-        &__figure { aspect-ratio: 4 / 5; }
+        &__figure, &--engineer::before { aspect-ratio: 4 / 5; }
     }
 }
 
@@ -310,9 +344,6 @@ html[data-pv="D"] {
         padding: 0.8rem 0;
         border-bottom: 1px solid rgba($d-navy, 0.2);
     }
-
-    li[data-point] { cursor: crosshair; }
-    li[data-point] span::before { content: ""; display: inline-block; width: 0.45rem; height: 0.45rem; margin-right: 0.5rem; border-radius: 50%; background: $d-coral; vertical-align: 0.1em; }
 
     span { grid-row: span 2; font-variant-numeric: tabular-nums; font-size: 0.9375rem; opacity: 0.8; }
     strong { font-weight: 700; }
@@ -361,9 +392,12 @@ html[data-pv="D"] {
 .d-plate--off::before {
     content: "";
     position: absolute;
-    inset: 0 0 auto;
-    height: clamp(6rem, 14vw, 12rem);
-    background: linear-gradient(#{$d-grey}, rgba($d-grey, 0));
+    inset: -2px 0 auto;
+    height: clamp(12rem, 30vw, 26rem);
+    background:
+        radial-gradient(ellipse 62% 100% at 82% 0%, $d-grey 25%, rgba($d-grey, 0) 100%),
+        radial-gradient(ellipse 40% 55% at 12% 0%, $d-grey 20%, rgba($d-grey, 0) 100%),
+        linear-gradient($d-grey, rgba($d-grey, 0) 30%);
     pointer-events: none;
 }
 
@@ -371,8 +405,11 @@ html[data-pv="D"] {
     content: "";
     position: absolute;
     inset: auto 0 0;
-    height: clamp(5rem, 10vw, 9rem);
-    background: linear-gradient(rgba($d-lilac, 0), $d-lilac);
+    height: clamp(9rem, 20vw, 18rem);
+    background:
+        radial-gradient(ellipse 70% 100% at 22% 100%, $d-lilac 25%, rgba($d-lilac, 0) 100%),
+        radial-gradient(ellipse 45% 60% at 90% 100%, $d-lilac 15%, rgba($d-lilac, 0) 100%),
+        linear-gradient(rgba($d-lilac, 0) 55%, $d-lilac);
     pointer-events: none;
 }
 
@@ -382,12 +419,8 @@ html[data-pv="D"] {
     max-width: 92rem;
     margin: 0 auto;
     aspect-ratio: 1680 / 944;
-    $feather-x: linear-gradient(to right, transparent, #000 16%, #000 84%, transparent);
-    $feather-y: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
-    -webkit-mask: $feather-x, $feather-y;
-    -webkit-mask-composite: source-in;
-    mask: $feather-x, $feather-y;
-    mask-composite: intersect;
+    -webkit-mask: radial-gradient(ellipse 50% 50% at 50% 50%, #000 55%, transparent 100%);
+    mask: radial-gradient(ellipse 50% 50% at 50% 50%, #000 55%, transparent 100%);
 
     img, picture { display: block; width: 100%; height: 100%; object-fit: cover; }
 
@@ -396,29 +429,9 @@ html[data-pv="D"] {
 
 .d-caption--off { position: relative; z-index: 1; padding-top: 0; }
 
-.d-leader {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: visible;
-    z-index: 5;
-
-    line {
-        stroke: $d-coral;
-        stroke-width: 1.5;
-        stroke-dasharray: var(--len, 0);
-        stroke-dashoffset: var(--len, 0);
-        transition: stroke-dashoffset 420ms cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    circle { fill: $d-coral; stroke: $d-sheet; stroke-width: 2; opacity: 0; transition: opacity 200ms ease 220ms; }
-    &.is-on line { stroke-dashoffset: 0; }
-    &.is-on circle { opacity: 1; }
-}
-
 .d-foot {
+    position: relative;
+    margin-top: -1px;
     padding: 2rem clamp(1rem, 4vw, 3rem) 6rem;
     background: $d-lilac;
     color: $d-navy;
