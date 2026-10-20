@@ -98,7 +98,7 @@ If you replace a tile, keep these rules:
 - **Small sizes:** a feed shows the card at about 550 px wide. Keep the name and the letterhead text at their sizes, and test a change at that width.
 - **X label:** X puts the domain over the bottom-left corner of the image. On the 600 px card, the letterhead sits 68 px from the bottom so that the label does not cover it.
 - **ViaCara lockup:** it stays blue on the sky letterhead, with clear space on each side. Do not recolour it for the curtain.
-- **Cache:** `/images/*` is cached as immutable. Change the `?v=` value on `og:image` and `twitter:image` in `templates/base.html` when you render new cards.
+- **Cache:** `/images/*` is cached as immutable. Each card file name carries the first 8 characters of its SHA-256 hash, so a new render gets a new URL. The script deletes the old file and writes the new name into `templates/base.html`. Do not use a `?v=` query for the cards: LinkedIn kept a 160 px copy of `og-image.jpg?v=2026-10-20` and stretched it over the full card.
 
 ## Favicons
 
