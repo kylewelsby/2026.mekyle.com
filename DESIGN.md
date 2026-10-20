@@ -102,7 +102,9 @@ If you replace a tile, keep these rules:
 
 ## Favicons
 
-`scripts/render-favicons.py` renders the favicons from the hero cut-out on the pink linen tile. Run `uv run scripts/render-favicons.py`. Add `--background radial` for a smooth pink gradient in place of the linen.
+`scripts/render-favicons.py` renders the favicons from the hero cut-out. Run `uv run scripts/render-favicons.py`.
+
+- **Background:** a smooth radial gradient in the colours of the pink linen, light behind the face and deeper at the edge. Kyle chose it over the linen texture. At 16 px, the linen folds show as stripes.
 
 - **Tab icons** (`favicon.ico`, `favicon-16x16.png`, `favicon-32x32.png`, `favicon-192x192.png`): Kyle's face in a pink circle with transparent corners. The hair breaks out of the top of the circle, as in the earlier blue favicon. The 192 px file is for Google Search, which recommends a favicon larger than 48 px.
 - **iOS icon** (`apple-touch-icon.png`): a full pink square with no transparency. iOS fills transparent pixels with black, then applies its own rounded mask.
