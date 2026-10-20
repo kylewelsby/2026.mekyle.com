@@ -76,4 +76,4 @@ The Open Graph and Twitter images SHALL come from the card template in `scripts/
 #### Scenario: Card refreshed
 - **WHEN** the card template or its assets change
 - **THEN** `scripts/capture-social-images.sh` renders both images again
-- **AND** the `?v=` values on `og:image` and `twitter:image` change in the same pull request
+- **AND** each image file name carries the hash of the new file, and `og:image` and `twitter:image` use the new names in the same pull request
