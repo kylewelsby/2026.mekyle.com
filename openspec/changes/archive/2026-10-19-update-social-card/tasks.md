@@ -12,4 +12,4 @@
 ## 3. Release
 
 - [x] 3.1 Kyle approves the card
-- [ ] 3.2 Re-scrape the card in LinkedIn Post Inspector after deploy (waits on a LinkedIn sign-in in the T3 browser)
+- [x] 3.2 Re-scrape the card in LinkedIn Post Inspector after deploy (sharp on 2026-10-20 after #6 gave the card a hashed path)
