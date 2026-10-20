@@ -19,8 +19,9 @@ for spec in "og-image 630" "twitter-card 600"; do
         --screenshot="$tmp/$name.png" "$card?h=$height" >/dev/null 2>&1
     sips -s format jpeg -s formatOptions 90 "$tmp/$name.png" --out "$tmp/$name.jpg" >/dev/null
     file="$name-$(shasum -a 256 "$tmp/$name.jpg" | cut -c1-8).jpg"
-    rm -f "$out/$name"-*.jpg
     mv "$tmp/$name.jpg" "$out/$file"
+    find "$out" -name "$name-????????.jpg" ! -name "$file" -delete
     sed -E -i '' "s#/images/$name-[0-9a-f]{8}\.jpg#/images/$file#" "$root/templates/base.html"
+    grep -q "/images/$file" "$root/templates/base.html" || { echo "templates/base.html has no /images/$name-<hash>.jpg" >&2; exit 1; }
     echo "$out/$file $(sips -g pixelWidth -g pixelHeight "$out/$file" | awk '/pixel/ {printf "%s ", $2}')"
 done
