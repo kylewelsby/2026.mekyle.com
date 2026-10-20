@@ -99,3 +99,11 @@ If you replace a tile, keep these rules:
 - **X label:** X puts the domain over the bottom-left corner of the image. On the 600 px card, the letterhead sits 68 px from the bottom so that the label does not cover it.
 - **ViaCara lockup:** it stays blue on the sky letterhead, with clear space on each side. Do not recolour it for the curtain.
 - **Cache:** `/images/*` is cached as immutable. Change the `?v=` value on `og:image` and `twitter:image` in `templates/base.html` when you render new cards.
+
+## Favicons
+
+`scripts/render-favicons.py` renders the favicons from the hero cut-out on the pink linen tile. Run `uv run scripts/render-favicons.py`. Add `--background radial` for a smooth pink gradient in place of the linen.
+
+- **Tab icons** (`favicon.ico`, `favicon-16x16.png`, `favicon-32x32.png`, `favicon-192x192.png`): Kyle's face in a pink circle with transparent corners. The hair breaks out of the top of the circle, as in the earlier blue favicon. The 192 px file is for Google Search, which recommends a favicon larger than 48 px.
+- **iOS icon** (`apple-touch-icon.png`): a full pink square with no transparency. iOS fills transparent pixels with black, then applies its own rounded mask.
+- **Cache:** browsers keep favicons for a long time. Change the `?v=` value on the favicon links in `templates/base.html` when you render new icons.
