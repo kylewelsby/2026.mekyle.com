@@ -1,67 +1,73 @@
+#!/usr/bin/env -S uv run --script
 # /// script
 # requires-python = ">=3.11"
 # dependencies = ["pillow>=11", "numpy>=2"]
 # ///
 """Renders the favicons from the hero cut-out on a pink radial gradient.
 
-Usage: uv run scripts/render-favicons.py [--out DIR]
+Usage: scripts/render-favicons.py
 """
-import argparse
 from pathlib import Path
 
 import numpy as np
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "static"
 CUTOUT = ROOT / "static/media/kyle-curtain-arms-crossed-cutout-2400.webp"
+CUTOUT_HAIR_TOP_Y = 386
+CUTOUT_CHIN_Y = 1125
+CUTOUT_HEAD_X = 804
 
 SIZE = 1440
 CENTRE = SIZE / 2
 RADIUS = SIZE * 0.467
-HAIR_TOP = 386
-CHIN = 1125
-HEAD_X = 804
 HEAD_FRACTION = 0.55
 SQUARE_HEAD_FRACTION = 0.48
 
 PINK_LIGHT = np.array([227, 206, 211])
 PINK_MID = np.array([199, 160, 166])
 PINK_DEEP = np.array([133, 89, 92])
+GRADIENT_SPAN = SIZE * 0.62
+GRADIENT_KNEE = 0.55
 
 
-def background():
+def distance_from(centre_y):
     y, x = np.mgrid[0:SIZE, 0:SIZE].astype(float)
-    d = np.clip(np.hypot(x - CENTRE, y - CENTRE * 0.8) / (SIZE * 0.62), 0, 1)[..., None]
+    return np.hypot(x - CENTRE, y - centre_y)
+
+
+def background(alpha=1.0):
+    t = np.clip(distance_from(CENTRE * 0.8) / GRADIENT_SPAN, 0, 1)[..., None]
     rgb = np.where(
-        d < 0.55,
-        PINK_LIGHT + (PINK_MID - PINK_LIGHT) * d / 0.55,
-        PINK_MID + (PINK_DEEP - PINK_MID) * (d - 0.55) / 0.45,
+        t < GRADIENT_KNEE,
+        PINK_LIGHT + (PINK_MID - PINK_LIGHT) * t / GRADIENT_KNEE,
+        PINK_MID + (PINK_DEEP - PINK_MID) * (t - GRADIENT_KNEE) / (1 - GRADIENT_KNEE),
     )
-    return Image.fromarray(rgb.astype(np.uint8), "RGB").convert("RGBA")
+    rgba = np.dstack([rgb, np.broadcast_to(alpha, (SIZE, SIZE)) * 255])
+    return Image.fromarray(rgba.astype(np.uint8), "RGBA")
 
 
 def person(head_fraction, hair_top_y):
     cutout = Image.open(CUTOUT).convert("RGBA")
-    scale = SIZE * head_fraction / (CHIN - HAIR_TOP)
+    scale = SIZE * head_fraction / (CUTOUT_CHIN_Y - CUTOUT_HAIR_TOP_Y)
     cutout = cutout.resize((round(cutout.width * scale), round(cutout.height * scale)), Image.LANCZOS)
     layer = Image.new("RGBA", (SIZE, SIZE))
-    layer.alpha_composite(cutout, (round(CENTRE - HEAD_X * scale), round(hair_top_y - HAIR_TOP * scale)))
+    layer.alpha_composite(cutout, (round(CENTRE - CUTOUT_HEAD_X * scale), round(hair_top_y - CUTOUT_HAIR_TOP_Y * scale)))
     return layer
 
 
-def circle_mask():
-    y, x = np.mgrid[0:SIZE, 0:SIZE].astype(float)
-    return np.clip(RADIUS - np.hypot(x - CENTRE, y - CENTRE) + 0.5, 0, 1)
-
-
 def round_icon():
+    disc = np.clip(RADIUS - distance_from(CENTRE) + 0.5, 0, 1)
     figure = person(HEAD_FRACTION, CENTRE - RADIUS - SIZE * 0.03)
-    art = background()
-    art.alpha_composite(figure)
-    head = np.asarray(figure, dtype=float)[..., 3] / 255
-    head[int(CENTRE):] = 0
-    rgba = np.asarray(art, dtype=float)
-    rgba[..., 3] = np.maximum(circle_mask(), head) * 255
+    hair_free = background(disc)
+    hair_free.alpha_composite(figure)
+    clipped = background()
+    clipped.alpha_composite(figure)
+    clipped = np.asarray(clipped, dtype=float).copy()
+    clipped[..., 3] = disc * 255
+    rgba = np.asarray(hair_free, dtype=float).copy()
+    rgba[int(CENTRE):] = clipped[int(CENTRE):]
     return Image.fromarray(rgba.astype(np.uint8), "RGBA")
 
 
@@ -72,17 +78,12 @@ def square_icon():
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--out", type=Path, default=ROOT / "static")
-    args = parser.parse_args()
-    args.out.mkdir(parents=True, exist_ok=True)
-
     round_art = round_icon()
     frames = {px: round_art.resize((px, px), Image.LANCZOS) for px in (16, 32, 48, 192)}
     for px in (16, 32, 192):
-        frames[px].save(args.out / f"favicon-{px}x{px}.png", optimize=True)
-    frames[48].save(args.out / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48)], append_images=[frames[16], frames[32]])
-    square_icon().resize((180, 180), Image.LANCZOS).save(args.out / "apple-touch-icon.png", optimize=True)
+        frames[px].save(OUT / f"favicon-{px}x{px}.png", optimize=True)
+    frames[48].save(OUT / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48)], append_images=[frames[16], frames[32]])
+    square_icon().resize((180, 180), Image.LANCZOS).save(OUT / "apple-touch-icon.png", optimize=True)
 
 
 if __name__ == "__main__":
