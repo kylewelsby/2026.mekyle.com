@@ -10,6 +10,9 @@ chrome="${CHROME:-/Applications/Google Chrome.app/Contents/MacOS/Google Chrome}"
 tmp="$(mktemp -d)"
 trap 'rm -rf "$tmp"' EXIT
 mkdir -p "$out"
+for file in banner.jpg avatar.jpg; do
+    [ ! -d "$out/$file" ] || { echo "$out/$file is a directory" >&2; exit 1; }
+done
 
 "$chrome" --headless=new --disable-gpu --hide-scrollbars --force-device-scale-factor=2 \
     --allow-file-access-from-files --virtual-time-budget=4000 --window-size=1280,400 \
