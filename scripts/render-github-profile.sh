@@ -14,9 +14,12 @@ mkdir -p "$out"
 "$chrome" --headless=new --disable-gpu --hide-scrollbars --force-device-scale-factor=2 \
     --allow-file-access-from-files --virtual-time-budget=4000 --window-size=1280,400 \
     --screenshot="$tmp/banner.png" "file://$root/scripts/social-card/github-banner.html" >/dev/null 2>&1
-sips -s format jpeg -s formatOptions 88 "$tmp/banner.png" --out "$out/banner.jpg" >/dev/null
+[ -s "$tmp/banner.png" ] || { echo "Chrome did not render the banner" >&2; exit 1; }
+sips -s format jpeg -s formatOptions 88 "$tmp/banner.png" --out "$tmp/banner.jpg" >/dev/null
 
-"$root/scripts/render-favicons.py" --avatar "$out/avatar.jpg"
+"$root/scripts/render-favicons.py" --avatar "$tmp/avatar.jpg"
+
+mv "$tmp/banner.jpg" "$tmp/avatar.jpg" "$out/"
 
 for file in banner.jpg avatar.jpg; do
     echo "$out/$file $(sips -g pixelWidth -g pixelHeight "$out/$file" | awk '/pixel/ {printf "%s ", $2}')"

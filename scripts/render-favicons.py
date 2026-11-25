@@ -80,7 +80,9 @@ def square_icon():
 
 
 def main():
-    if len(sys.argv) == 3 and sys.argv[1] == "--avatar":
+    if len(sys.argv) > 1:
+        if len(sys.argv) != 3 or sys.argv[1] != "--avatar":
+            sys.exit(__doc__)
         square_icon().resize((1024, 1024), Image.LANCZOS).save(sys.argv[2], quality=92)
         return
     round_art = round_icon()
