@@ -6,7 +6,9 @@
 """Renders the favicons from the hero cut-out on a pink radial gradient.
 
 Usage: scripts/render-favicons.py
+       scripts/render-favicons.py --avatar <file>   (1024 px square for a profile picture)
 """
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -78,6 +80,9 @@ def square_icon():
 
 
 def main():
+    if len(sys.argv) == 3 and sys.argv[1] == "--avatar":
+        square_icon().resize((1024, 1024), Image.LANCZOS).save(sys.argv[2], quality=92)
+        return
     round_art = round_icon()
     frames = {px: round_art.resize((px, px), Image.LANCZOS) for px in (16, 32, 48, 192)}
     for px in (16, 32, 192):
