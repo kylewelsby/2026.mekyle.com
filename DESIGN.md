@@ -100,6 +100,14 @@ If you replace a tile, keep these rules:
 - **ViaCara lockup:** it stays blue on the sky letterhead, with clear space on each side. Do not recolour it for the curtain.
 - **Cache:** `/images/*` is cached as immutable. Each card file name carries the first 8 characters of its SHA-256 hash, so a new render gets a new URL. The script deletes the old file and writes the new name into `templates/base.html`. Do not use a `?v=` query for the cards: LinkedIn kept a 160 px copy of `og-image.jpg?v=2026-10-20` and stretched it over the full card.
 
+## GitHub profile
+
+`scripts/render-github-profile.sh <output directory>` renders two images for `github.com/kylewelsby`. The site does not ship them.
+
+- **`banner.jpg`** (2560x800): `scripts/social-card/github-banner.html`, the social card in a 16:5 shape with the name on one line. It lives in the `kylewelsby/kylewelsby` repository and the profile README shows it.
+- **`avatar.jpg`** (1024x1024): the square favicon art from `scripts/render-favicons.py --avatar`. GitHub has no API for the profile picture, so Kyle uploads it in the GitHub settings.
+- **Licence:** `kylewelsby/kylewelsby` is public domain (Unlicense). Its README excludes the photograph and the ViaCara logo from that licence. Keep that line.
+
 ## Favicons
 
 `scripts/render-favicons.py` renders the favicons from the hero cut-out into `static/`. It needs `uv`.
